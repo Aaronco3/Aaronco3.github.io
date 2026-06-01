@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Cope — Engineering</title>
   <link rel="stylesheet" href="style.css" />
-  
 </head>
 <body>
 <nav class="site-nav">
@@ -21,8 +20,44 @@
   </ul>
 </nav>
 <main>
-  <section class="page-hero"><div class="wrap"><p class="eyebrow">Engineering Projects</p><h1 class="page-title">Design, analysis, manufacturing, and test work.</h1><p class="page-subtitle">Grouped by system or organization so the page can scale as more documentation is added.</p></div></section>
-  <section class="section wrap"><div class="section-head"><p class="kicker">Featured Work</p><div><h2>Project cards first, deep documentation second.</h2><p>Hidden items like the self-balancing motorcycle and Stirling engine are kept out of the visible grid for now.</p></div></div><div class="grid three"><a class="card card-link" href="engineering/pulsejet/pulsejet-engine.html"><div class="media"><span>Propulsion</span></div><div class="card-body"><div class="tag-row"><span class="tag">Propulsion</span><span class="status">Visible</span></div><h3>Pulsejet Engine</h3><p>A standalone propulsion project page for design notes, testing media, and lessons learned.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/deicer-1.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Floe Deicer 1</h3><p>First-generation deicing subsystem page for requirements, prototype decisions, and validation.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/deicer-2.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Floe Deicer 2</h3><p>Second-generation deicing subsystem page for iteration notes and improvements.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/sprayer-testing.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Sprayer Testing</h3><p>Test campaign page for experimental setup, results, and next steps.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/spark-igniter.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Spark Igniter</h3><p>Ignition system design and testing for Project Liquid.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/regen-engine.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Regen Engine + GSE Test Stand</h3><p>Regeneratively cooled engine work and ground support equipment test stand.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/launch-vehicle.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Launch Vehicle</h3><p>Vehicle structures, avionics bay, recovery, and integration.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/class-projects/pid-balancing-beam.html"><div class="media"><span>Class Project</span></div><div class="card-body"><div class="tag-row"><span class="tag">Class Project</span><span class="status">Visible</span></div><h3>PID Controlled Balancing Beam</h3><p>Controls and mechatronics class project.</p><span class="arrow">View project →</span></div></a></div></section>
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">Engineering Projects</p><h1 class="page-title">Projects organized by system, not just by page.</h1><p class="page-subtitle">A cleaner overview for propulsion, Floe deicing work, Project Liquid, and selected class projects.</p></div></section>
+  <section class="section wrap">
+    <div class="section-head"><p class="kicker">Project Families</p><div><h2>Scan the portfolio at a high level, then dive into the detail pages.</h2><p class="section-intro">This layout keeps the page from feeling like a generic card dump while still leaving room to add photos, test plots, and documentation later.</p></div></div>
+
+    <div class="project-family">
+      <div class="family-label"><div><span class="tag dark">Propulsion</span><h2>Pulsejet</h2><p>Standalone propulsion build with space for design notes, fabrication, testing, and takeaways.</p></div></div>
+      <div class="family-list">
+        <a class="project-row" href="engineering/pulsejet/pulsejet-engine.html"><div><h3>Pulsejet Engine</h3><p>Use this as the primary page for the engine build, test setup, media, and lessons learned.</p></div><span class="project-arrow">View →</span></a>
+      </div>
+    </div>
+
+    <div class="project-family">
+      <div class="family-label"><div><span class="tag dark">Product · Testing</span><h2>Floe</h2><p>Deicing subsystems and sprayer testing, organized as iterations rather than isolated writeups.</p></div></div>
+      <div class="family-list">
+        <a class="project-row" href="engineering/floe/deicer-1.html"><div><h3>Deicer 1</h3><p>First-generation deicer requirements, prototype choices, and validation path.</p></div><span class="project-arrow">View →</span></a>
+        <a class="project-row" href="engineering/floe/deicer-2.html"><div><h3>Deicer 2</h3><p>Second-generation improvements, design changes, and performance comparisons.</p></div><span class="project-arrow">View →</span></a>
+        <a class="project-row" href="engineering/floe/sprayer-testing.html"><div><h3>Sprayer Testing</h3><p>Test campaign setup, measurements, observations, and next-step decisions.</p></div><span class="project-arrow">View →</span></a>
+      </div>
+    </div>
+
+    <div class="project-family">
+      <div class="family-label"><div><span class="tag dark">Rocket Systems</span><h2>Project Liquid</h2><p>Major rocket subsystems, from ignition and engine work to the launch vehicle architecture.</p></div></div>
+      <div class="family-list">
+        <a class="project-row" href="engineering/project-liquid/spark-igniter.html"><div><h3>Spark Igniter</h3><p>Ignition design, test procedure, and integration considerations.</p></div><span class="project-arrow">View →</span></a>
+        <a class="project-row" href="engineering/project-liquid/regen-engine.html"><div><h3>Regen Engine + GSE Test Stand</h3><p>Engine design, regenerative cooling, and ground support equipment testing.</p></div><span class="project-arrow">View →</span></a>
+        <a class="project-row" href="engineering/project-liquid/launch-vehicle.html"><div><h3>Launch Vehicle</h3><p>Vehicle structure, avionics bay, recovery, separation, and integration.</p></div><span class="project-arrow">View →</span></a>
+      </div>
+    </div>
+
+    <div class="project-family">
+      <div class="family-label"><div><span class="tag dark">Coursework</span><h2>Class Projects</h2><p>Selected academic builds. Hidden drafts remain in the folder but are not linked publicly.</p></div></div>
+      <div class="family-list">
+        <a class="project-row" href="engineering/class-projects/pid-balancing-beam.html"><div><h3>PID Controlled Balancing Beam</h3><p>Controls and mechatronics project page for design, code, tuning, and results.</p></div><span class="project-arrow">View →</span></a>
+        <div class="hidden-note">Hidden for now: self-balancing motorcycle and Stirling engine pages are included in the repo but intentionally not linked here.</div>
+      </div>
+    </div>
+  </section>
 </main>
+<footer class="footer"><div class="wrap">© Aaron Cope · Mechanical Engineering + Economics · GitHub Pages portfolio</div></footer>
 </body>
 </html>

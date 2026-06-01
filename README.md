@@ -1,13 +1,14 @@
-# Aaron Cope Portfolio Redesign
+# Aaron Cope Portfolio — v2 redesign
 
-Static GitHub Pages-ready portfolio shell.
+This version keeps the About page direction and reworks the awkward follow-on pages.
 
-## Pages
-- `index.html` — landing page
-- `engineering.html` — project overview
-- `education.html` — coursework
-- `management.html` — leadership experience
-- `hobbies.html` — stats + blog format
-- `contact.html` — contact links
+## Main changes
+- Engineering is organized by project families rather than one giant card grid.
+- Education uses expandable semester cards so coursework is easier to scan.
+- Management uses case-study blocks and a simple operating rhythm.
+- Hobbies uses a dashboard plus log feed format.
+- Project pages have a consistent detail template with sidebar metadata.
 
-Project detail pages live under `engineering/`. Hidden class projects are included but not linked from the main engineering grid.
+Hidden draft pages remain in the repo but are not linked from the visible Engineering page:
+- `engineering/class-projects/self-balancing-motorcycle.html`
+- `engineering/class-projects/stirling-engine.html`
