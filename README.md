@@ -1,14 +1,10 @@
-# Aaron Cope Portfolio — v2 redesign
+# Aaron Cope Portfolio Redesign v3
 
-This version keeps the About page direction and reworks the awkward follow-on pages.
+This version is a more substantial redesign. The About page style is preserved, but the later pages now use distinct layouts:
 
-## Main changes
-- Engineering is organized by project families rather than one giant card grid.
-- Education uses expandable semester cards so coursework is easier to scan.
-- Management uses case-study blocks and a simple operating rhythm.
-- Hobbies uses a dashboard plus log feed format.
-- Project pages have a consistent detail template with sidebar metadata.
+- Engineering: project families with a sticky index and subsystem rows.
+- Education: timeline-style coursework.
+- Management: case-study layout for YUAA and Floe.
+- Hobbies: progression dashboard plus blog/log feed.
 
-Hidden draft pages remain in the repo but are not linked from the visible Engineering page:
-- `engineering/class-projects/self-balancing-motorcycle.html`
-- `engineering/class-projects/stirling-engine.html`
+Open `index.html` locally or publish the folder through GitHub Pages.
