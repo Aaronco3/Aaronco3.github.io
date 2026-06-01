@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Cope — Launch Vehicle</title>
+  <link rel="stylesheet" href="../../style.css" />
+  <style>
+    .detail-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-top: 32px;
+    }
+    .detail-block h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 12px;
+    }
+    .status-badge {
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border: 1px solid var(--accent-light);
+      color: var(--accent-light);
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="../../index.html" class="nav-logo">Aaron Cope</a>
+    <ul class="nav-links">
+      <li><a href="../../about.html">About</a></li>
+      <li><a href="../../engineering.html" class="active">Engineering</a></li>
+      <li><a href="../../education.html">Education</a></li>
+      <li><a href="../../contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <a href="../../engineering.html" class="back-link">← Engineering Projects</a>
+      <p class="page-label">Project Liquid</p>
+      <h1 class="page-title">Launch Vehicle</h1>
+      <p class="page-subtitle">Full liquid-fueled rocket vehicle targeting FAR-OUT competition, June 2026.</p>
+    </div>
+
+    <div class="content">
+      <div class="section">
+        <p class="section-label">Project Initiative</p>
+        <span class="status-badge">In Progress — Manufacturing &amp; Validation</span>
+        <p>
+          To design, manufacture, and launch a liquid-fueled launch vehicle to compete at the annual Friends of Amateur Rocketry Oxidizers Unlimited Tournament (FAR-OUT) in June 2026.
+        </p>
+        <p>
+          Subassemblies have completed the design phase and are finalizing manufacturing and component validation phases.
+        </p>
+      </div>
+
+      <div class="section">
+        <p class="section-label">My Role</p>
+        <p>Responsible for the design, manufacturing, testing, and integration of:</p>
+        <ul class="role-list" style="margin-bottom: 20px;">
+          <li>Avionics Bay</li>
+          <li>Recovery Systems</li>
+          <li>Separation Mechanism</li>
+        </ul>
+        <p>Responsible for the organization and oversight of:</p>
+        <ul class="role-list">
+          <li>Pressure vessels</li>
+          <li>Propulsion mounting</li>
+          <li>Payload integration</li>
+          <li>Aerostructures</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Structures — Subteam Lead, Spring 2025</p>
+
+        <div class="detail-block">
+          <h3>Upper Airframe</h3>
+          <p>
+            Constructed from in-house manufactured G10 fiberglass — chosen for its high strength and RF signal transparency, enabling external communication with the GPS locator during recovery. Bulkheads are machined from 1/8" aluminum to withstand parachute loads.
+          </p>
+          <p>
+            The nosecone is fiberglass, sized to support a 2U cubesat payload in compliance with competition regulations. A 4:5 Von Karman Ogive profile optimizes aerodynamic performance.
+          </p>
+        </div>
+
+        <div class="detail-block">
+          <h3>Lower Airframe</h3>
+          <p>
+            Constructed from aluminum tubes and bulkheads, designed to resist internal pressures of the fuel and oxidizer tanks, and to serve as detachable clamshells for servicing fluid components as needed.
+          </p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Avionics Bay — Responsible Engineer, Spring 2025</p>
+        <p>
+          The avionics bay consists of an internal fiberglass body compressed between two welded bulk plates using internally threaded rods, to which the avionics mounting plates are attached. It serves as the coupler between two external body tubes, compressing a 1" switch band. Two ports equalize the internal pressure with the external environment, allowing the altimeter to correctly trigger parachute deployment.
+        </p>
+
+        <p style="margin-top:16px;"><strong style="font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;">Design Drivers</strong></p>
+        <ul class="role-list" style="margin-top:12px;">
+          <li>Aerodynamic tension forces along the vehicle axis</li>
+          <li>Volume constraints of recovery hardware</li>
+          <li>Drogue parachute opening loads</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="skills-row">
+          <div class="skills-col">
+            <h4>Technical Skills</h4>
+            <ul class="role-list">
+              <li>CAD (SolidWorks &amp; OnShape)</li>
+              <li>Machining &amp; Manufacturing</li>
+              <li>Finite Element Analysis</li>
+              <li>Computational Flow Dynamics</li>
+              <li>Python</li>
+              <li>Testing &amp; Data Analysis</li>
+            </ul>
+          </div>
+          <div class="skills-col">
+            <h4>Behavioral Skills</h4>
+            <ul class="role-list">
+              <li>Cross-disciplinary collaboration</li>
+              <li>Trade analysis</li>
+              <li>Project organization</li>
+              <li>System documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
