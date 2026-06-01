@@ -5,96 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Cope — Engineering</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="engineering.html" class="active">Engineering</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="page-header">
-      <p class="page-label">Engineering Projects</p>
-      <h1 class="page-title">Technical Work</h1>
-      <p class="page-subtitle">Design, analysis, prototyping, and testing across aerospace and mechanical systems.</p>
-    </div>
-
-    <div class="content">
-
-      <div class="section">
-        <p class="section-label">Project Liquid</p>
-        <p>An ongoing effort to design, manufacture, and launch a liquid-fueled rocket to compete at the FAR-OUT competition in June 2026.</p>
-        <div class="project-grid">
-
-          <a href="engineering/project-liquid/launch-vehicle.html" class="project-card">
-            <div class="card-img">
-              <!-- <img src="images/launch-vehicle.jpg" alt="Launch Vehicle"> -->
-              <span class="card-img-placeholder">Photo coming soon</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Structures · Avionics · Recovery</span>
-              <span class="card-title">Launch Vehicle</span>
-              <span class="card-desc">Full vehicle structure, avionics bay, recovery systems, and separation mechanism for a liquid-fueled rocket.</span>
-              <span class="card-arrow">View project →</span>
-            </div>
-          </a>
-
-          <a href="engineering/project-liquid/regen-engine.html" class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a3260 0%, #3d6fd4 100%);">
-              <!-- <img src="images/regen-engine.jpg" alt="Regen Engine"> -->
-              <span class="card-img-placeholder">Photo coming soon</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Propulsion</span>
-              <span class="card-title">Regen Engine</span>
-              <span class="card-desc">Regeneratively cooled liquid rocket engine design and analysis.</span>
-              <span class="card-arrow">View project →</span>
-            </div>
-          </a>
-
-          <a href="engineering/project-liquid/spark-igniter.html" class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #0f1f3d 0%, #2a4a8a 60%, #5b8dee 100%);">
-              <!-- <img src="images/spark-igniter.jpg" alt="Spark Igniter"> -->
-              <span class="card-img-placeholder">Photo coming soon</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Propulsion · Ignition</span>
-              <span class="card-title">Spark Igniter</span>
-              <span class="card-desc">Design and testing of the ignition system for the liquid rocket engine.</span>
-              <span class="card-arrow">View project →</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-      <div class="section">
-        <p class="section-label">Class Projects</p>
-        <p>Hands-on engineering projects completed through Yale coursework.</p>
-        <div class="project-grid">
-
-          <a href="engineering/class-projects/pid-balancing-beam.html" class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a3260 0%, #3d6fd4 100%);">
-              <!-- <img src="images/pid-beam.jpg" alt="PID Balancing Beam"> -->
-              <span class="card-img-placeholder">Photo coming soon</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Controls · Mechatronics</span>
-              <span class="card-title">PID Balancing Beam</span>
-              <span class="card-desc">Design and implementation of a PID-controlled beam balancing system.</span>
-              <span class="card-arrow">View project →</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-
-    </div>
-  </main>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="about.html" class="">About</a></li>
+    <li><a href="engineering.html" class="active">Engineering</a></li>
+    <li><a href="education.html" class="">Education</a></li>
+    <li><a href="management.html" class="">Management</a></li>
+    <li><a href="hobbies.html" class="">Hobbies</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  </ul>
+</nav>
+<main>
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">Engineering Projects</p><h1 class="page-title">Design, analysis, manufacturing, and test work.</h1><p class="page-subtitle">Grouped by system or organization so the page can scale as more documentation is added.</p></div></section>
+  <section class="section wrap"><div class="section-head"><p class="kicker">Featured Work</p><div><h2>Project cards first, deep documentation second.</h2><p>Hidden items like the self-balancing motorcycle and Stirling engine are kept out of the visible grid for now.</p></div></div><div class="grid three"><a class="card card-link" href="engineering/pulsejet/pulsejet-engine.html"><div class="media"><span>Propulsion</span></div><div class="card-body"><div class="tag-row"><span class="tag">Propulsion</span><span class="status">Visible</span></div><h3>Pulsejet Engine</h3><p>A standalone propulsion project page for design notes, testing media, and lessons learned.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/deicer-1.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Floe Deicer 1</h3><p>First-generation deicing subsystem page for requirements, prototype decisions, and validation.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/deicer-2.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Floe Deicer 2</h3><p>Second-generation deicing subsystem page for iteration notes and improvements.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/floe/sprayer-testing.html"><div class="media"><span>Floe</span></div><div class="card-body"><div class="tag-row"><span class="tag">Floe</span><span class="status">Visible</span></div><h3>Sprayer Testing</h3><p>Test campaign page for experimental setup, results, and next steps.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/spark-igniter.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Spark Igniter</h3><p>Ignition system design and testing for Project Liquid.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/regen-engine.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Regen Engine + GSE Test Stand</h3><p>Regeneratively cooled engine work and ground support equipment test stand.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/project-liquid/launch-vehicle.html"><div class="media"><span>Project Liquid</span></div><div class="card-body"><div class="tag-row"><span class="tag">Project Liquid</span><span class="status">Visible</span></div><h3>Launch Vehicle</h3><p>Vehicle structures, avionics bay, recovery, and integration.</p><span class="arrow">View project →</span></div></a><a class="card card-link" href="engineering/class-projects/pid-balancing-beam.html"><div class="media"><span>Class Project</span></div><div class="card-body"><div class="tag-row"><span class="tag">Class Project</span><span class="status">Visible</span></div><h3>PID Controlled Balancing Beam</h3><p>Controls and mechatronics class project.</p><span class="arrow">View project →</span></div></a></div></section>
+</main>
 </body>
 </html>

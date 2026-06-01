@@ -5,103 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Cope — About</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
-    <ul class="nav-links">
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="engineering.html">Engineering</a></li>
-      <li><a href="education.html">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="page-header">
-      <p class="page-label">About Me</p>
-      <h1 class="page-title">Hey, I'm Aaron</h1>
-      <p class="page-subtitle">Engineer, economist, and builder — originally from Florida.</p>
-    </div>
-
-    <div class="content">
-
-      <div class="section">
-        <!-- Photo placeholder — swap src when you have a headshot -->
-        <div class="img-placeholder" style="aspect-ratio:3/1; max-height:320px;">
-          <span class="img-placeholder-label">Photo coming soon</span>
-        </div>
-        <p class="section-label" style="margin-top:36px;">Background</p>
-        <p>
-          I'm a double major in Mechanical Engineering and Economics at Yale University, driven by a strong interest in advancing complex engineering systems. I deeply enjoy designing, optimizing, manufacturing, and testing functional systems — whether that's a liquid-fueled rocket or an economic model.
-        </p>
-        <p>
-          Originally from Florida, combining engineering rigor with economic thinking lets me approach problems from a unique angle: building things that work <em>and</em> make sense in the real world.
-        </p>
-        <p>
-          This portfolio is a living document — I'm continuously adding new projects from my time at Yale.
-        </p>
-      </div>
-
-      <div class="section">
-        <p class="section-label">What I do</p>
-        <div class="skills-row">
-          <div class="skills-col">
-            <h4>Technical</h4>
-            <ul class="role-list">
-              <li>Design, manufacture, and test aerospace &amp; mechanical systems</li>
-              <li>CAD — SolidWorks &amp; OnShape</li>
-              <li>Finite Element Analysis &amp; CFD</li>
-              <li>Python &amp; data analysis</li>
-              <li>Machining &amp; prototyping</li>
-            </ul>
-          </div>
-          <div class="skills-col">
-            <h4>Other</h4>
-            <ul class="role-list">
-              <li>Lead cross-disciplinary engineering teams</li>
-              <li>Economic analysis &amp; technical decision-making</li>
-              <li>Project organization &amp; documentation</li>
-              <li>Portuguese (L5)</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <p class="section-label">Explore</p>
-        <div class="project-grid">
-          <a href="engineering.html" class="project-card">
-            <div class="card-img"><span class="card-img-placeholder">Engineering</span></div>
-            <div class="card-body">
-              <span class="card-tag">Projects</span>
-              <span class="card-title">Engineering Work</span>
-              <span class="card-desc">Rockets, mechatronics, and class projects.</span>
-              <span class="card-arrow">View all →</span>
-            </div>
-          </a>
-          <a href="education.html" class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a3260 0%, #2a4a8a 100%);"><span class="card-img-placeholder">Education</span></div>
-            <div class="card-body">
-              <span class="card-tag">Academic</span>
-              <span class="card-title">Yale &amp; LSE</span>
-              <span class="card-desc">Full coursework across engineering and economics.</span>
-              <span class="card-arrow">View coursework →</span>
-            </div>
-          </a>
-          <a href="contact.html" class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #0f1f3d 0%, #3d6fd4 100%);"><span class="card-img-placeholder">Contact</span></div>
-            <div class="card-body">
-              <span class="card-tag">Connect</span>
-              <span class="card-title">Get in Touch</span>
-              <span class="card-desc">Reach out via email or find me on GitHub.</span>
-              <span class="card-arrow">Contact →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-    </div>
-  </main>
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="engineering.html" class="">Engineering</a></li>
+    <li><a href="education.html" class="">Education</a></li>
+    <li><a href="management.html" class="">Management</a></li>
+    <li><a href="hobbies.html" class="">Hobbies</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  </ul>
+</nav>
+<main>
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">About</p><h1 class="page-title">Engineer, economist, and builder.</h1><p class="page-subtitle">Originally from Florida, now studying Mechanical Engineering and Economics at Yale.</p></div></section>
+  <section class="section wrap"><div class="feature feature-grid"><div><p class="kicker">Background</p><h2>Building complex systems with practical constraints in mind.</h2><p>I enjoy designing, optimizing, manufacturing, and testing functional systems — from liquid-fueled rockets to mechanical prototypes and economic models.</p><p>This site is a flexible portfolio shell, so project pages can grow as documentation, photos, and test data are added.</p></div><div class="placeholder"><span>Headshot / Workshop Photo</span></div></div></section>
+  <section class="section wrap"><div class="section-head"><p class="kicker">Capabilities</p><div><h2>Technical depth plus team execution.</h2></div></div><div class="grid two"><div class="card pad"><h3>Technical</h3><ul class="clean"><li>CAD: SolidWorks and OnShape</li><li>FEA, CFD, and engineering analysis</li><li>Machining, manufacturing, and prototyping</li><li>Python and data analysis</li></ul></div><div class="card pad"><h3>Leadership</h3><ul class="clean"><li>Cross-disciplinary team coordination</li><li>Project organization and documentation</li><li>Trade studies and decision frameworks</li><li>Portuguese L5</li></ul></div></div></section>
+</main>
 </body>
 </html>

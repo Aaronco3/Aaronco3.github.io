@@ -5,38 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Cope — Education</title>
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 <body>
-  <nav>
-    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
-    <ul class="nav-links">
-      <li><a href="about.html">About</a></li>
-      <li><a href="engineering.html">Engineering</a></li>
-      <li><a href="education.html" class="active">Education</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div class="page-header">
-      <p class="page-label">Education</p>
-      <h1 class="page-title">Yale University</h1>
-      <p class="page-subtitle">Double major in Mechanical Engineering &amp; Economics. Bridging technical design with real-world decision-making.</p>
-    </div>
-
-    <div class="content">
-
-      <div class="section">
-        <p class="section-label">Overview</p>
-        <p>Studying both mechanical engineering and economics, I've built a skill set that bridges technical design and practical business considerations — optimizing engineering solutions with a clear focus on cost efficiency, performance, and real-world constraints.</p>
-        <p>I also studied at the <strong style="color:var(--navy);font-weight:500;">London School of Economics</strong> (Summer 2023), taking macroeconomics and finance.</p>
-        <p style="font-size:0.78rem;color:var(--gray-500);margin-top:4px;">** Marks graduate-level coursework</p>
-      </div>
-
-      <div class="section">
-        <p class="section-label">Coursework</p>
-
-        <div class="semester">
+<nav class="site-nav">
+  <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+  <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="about.html" class="">About</a></li>
+    <li><a href="engineering.html" class="">Engineering</a></li>
+    <li><a href="education.html" class="active">Education</a></li>
+    <li><a href="management.html" class="">Management</a></li>
+    <li><a href="hobbies.html" class="">Hobbies</a></li>
+    <li><a href="contact.html" class="">Contact</a></li>
+  </ul>
+</nav>
+<main>
+  <section class="page-hero"><div class="wrap"><p class="eyebrow">Education</p><h1 class="page-title">Yale University</h1><p class="page-subtitle">Mechanical Engineering and Economics, with coursework spanning technical design, controls, fluids, finance, and decision-making.</p></div></section>
+  <section class="section wrap"><div class="feature"><p class="kicker">Overview</p><h2>Engineering rigor with economic context.</h2><p>Studying both mechanical engineering and economics has built a skill set that bridges technical design and practical business considerations. Also studied macroeconomics and finance at the London School of Economics in Summer 2023.</p><p><strong>**</strong> marks graduate-level coursework.</p></div></section>
+  <section class="section wrap"><div class="section-head"><p class="kicker">Coursework</p><div><h2>Academic timeline.</h2></div></div><div class="semester">
           <h3>Spring 2026 <span style="font-size:0.75rem;color:var(--gray-500);font-family:'Outfit',sans-serif;font-weight:300;">(tentative) — 3.5 credits</span></h3>
           <div class="course-row"><span class="course-code">ECON 3303</span><span>Technology and Society</span></div>
           <div class="course-row"><span class="course-code">ECON 4411</span><span>Economics of Uncertainty and Information</span></div>
@@ -116,10 +103,7 @@
         <div class="semester">
           <h3>Summer 2022 — 1 credit</h3>
           <div class="course-row"><span class="course-code">ECON 117</span><span>Econometrics</span></div>
-        </div>
-      </div>
-
-    </div>
-  </main>
+        </section>
+</main>
 </body>
 </html>
