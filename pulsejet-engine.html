@@ -2,188 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Aaron Cope — Pulsejet Engine</title>
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    /* Page-specific additions. Safe to remove if these already exist in style.css. */
-    .project-hero {
-      padding: 5rem 6vw 3rem;
-    }
-
-    .project-hero-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(280px, 0.9fr);
-      gap: 2.5rem;
-      align-items: center;
-    }
-
-    .project-hero h1 {
-      margin: 0.35rem 0 1rem;
-      font-size: clamp(2.4rem, 6vw, 5rem);
-      line-height: 0.95;
-      letter-spacing: -0.05em;
-    }
-
-    .project-hero p {
-      max-width: 680px;
-      font-size: 1.04rem;
-      line-height: 1.7;
-    }
-
-    .project-hero-image,
-    .project-image,
-    .project-figure {
-      border-radius: 24px;
-      overflow: hidden;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .project-hero-image img,
-    .project-image img,
-    .project-figure img {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-
-    .project-hero-image {
-      min-height: 360px;
-    }
-
-    .project-hero-image img {
-      min-height: 360px;
-    }
-
-    .project-section {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 3rem 6vw;
-    }
-
-    .project-section h2 {
-      margin: 0 0 1rem;
-      font-size: clamp(1.7rem, 3vw, 2.6rem);
-      letter-spacing: -0.035em;
-    }
-
-    .project-section p {
-      font-size: 1rem;
-      line-height: 1.7;
-      max-width: 800px;
-    }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-card {
-      padding: 1.35rem;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .project-card h3 {
-      margin: 0 0 0.65rem;
-      font-size: 1rem;
-    }
-
-    .project-card p {
-      margin: 0;
-      font-size: 0.95rem;
-      line-height: 1.55;
-    }
-
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
-    }
-
-    .stat-card {
-      padding: 1.4rem;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .stat-card strong {
-      display: block;
-      font-size: clamp(1.6rem, 3vw, 2.4rem);
-      line-height: 1;
-      letter-spacing: -0.05em;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-card span {
-      font-size: 0.92rem;
-      line-height: 1.4;
-      opacity: 0.82;
-    }
-
-    .split-section {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .project-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin-top: 1.5rem;
-    }
-
-    .project-tags span {
-      padding: 0.45rem 0.7rem;
-      border-radius: 999px;
-      font-size: 0.84rem;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .caption {
-      margin-top: 0.65rem;
-      font-size: 0.86rem;
-      opacity: 0.7;
-      line-height: 1.45;
-    }
-
-    .project-footer-nav {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 2rem 6vw 5rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 850px) {
-      .project-hero-inner,
-      .split-section {
-        grid-template-columns: 1fr;
-      }
-
-      .project-grid,
-      .stat-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .project-hero {
-        padding-top: 3rem;
-      }
-    }
+    .project-hero{padding:5rem 6vw 2.5rem}.project-hero-inner,.project-section{max-width:1120px;margin:0 auto}.project-hero h1{margin:.25rem 0 .9rem;font-size:clamp(2.6rem,7vw,5.5rem);line-height:.95;letter-spacing:-.055em}.project-hero p,.project-section p{max-width:820px;font-size:1.02rem;line-height:1.7}.project-tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.4rem}.project-tags span{padding:.45rem .72rem;border-radius:999px;font-size:.84rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.project-section{padding:2.7rem 6vw}.project-section h2{margin:0 0 1rem;font-size:clamp(1.7rem,3vw,2.55rem);letter-spacing:-.04em;line-height:1.05}.section-split{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:2rem;align-items:center}.media-frame{border-radius:24px;overflow:hidden;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.media-frame img,.media-frame video{width:100%;display:block;object-fit:cover}.media-frame.hero-media img,.media-frame.hero-media video{min-height:360px;max-height:620px}.media-frame.standard img,.media-frame.standard video{min-height:300px;max-height:560px}.media-scroll{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.25rem 0 .85rem;margin-top:1.35rem;-webkit-overflow-scrolling:touch}.media-scroll .media-frame{flex:0 0 min(86vw,720px);scroll-snap-align:start}.media-scroll .media-frame img,.media-scroll .media-frame video{height:430px;object-fit:cover}.media-scroll.results .media-frame{flex-basis:min(88vw,760px)}.media-scroll.results .media-frame img{height:420px;object-fit:contain;background:#fff}.stat-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin-top:1.5rem}.stat-card{padding:1.35rem;border-radius:20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}.stat-card strong{display:block;margin-bottom:.45rem;font-size:clamp(1.55rem,3vw,2.35rem);line-height:1;letter-spacing:-.05em}.stat-card span{font-size:.92rem;line-height:1.4;opacity:.82}.project-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin-top:1.4rem}.project-card{padding:1.25rem;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.project-card h3{margin:0 0 .55rem;font-size:1rem}.project-card p{margin:0;font-size:.94rem;line-height:1.55}.project-footer-nav{max-width:1120px;margin:0 auto;padding:2rem 6vw 5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}video{background:#111}@media(max-width:850px){.project-hero{padding-top:3.5rem}.section-split,.stat-grid,.project-card-grid{grid-template-columns:1fr}.media-scroll .media-frame img,.media-scroll .media-frame video,.media-scroll.results .media-frame img{height:320px}}
   </style>
 </head>
 
@@ -203,234 +27,146 @@
   <main>
     <header class="project-hero">
       <div class="project-hero-inner">
-        <div>
-          <p class="eyebrow">Mechanical Engineering Design</p>
-          <h1>Pulsejet Engine</h1>
-          <p>
-            A senior capstone project focused on designing, manufacturing, and hot-fire testing
-            a custom valved pulsejet engine. The project combined propulsion theory, fluid-system
-            design, controls, data acquisition, safety planning, and repeated test iteration.
-          </p>
-          <div class="project-tags">
-            <span>Propulsion</span>
-            <span>Design-build-test</span>
-            <span>Hot-fire testing</span>
-            <span>DAQ</span>
-            <span>Fluid systems</span>
-            <span>Controls</span>
-          </div>
+        <p class="eyebrow">Mechanical Engineering Design</p>
+        <h1>Pulsejet Engine</h1>
+        <p>
+          A senior capstone project focused on designing, manufacturing, and hot-fire testing
+          a custom valved pulsejet engine. The project combined propulsion theory, fluid-system
+          design, controls, data acquisition, safety planning, and repeated test iteration.
+        </p>
+        <div class="project-tags">
+          <span>Propulsion</span><span>Design-build-test</span><span>Hot-fire testing</span>
+          <span>DAQ</span><span>Fluid systems</span><span>Controls</span>
         </div>
-
-        <figure>
-          <div class="project-hero-image">
-            <img src="pulsejet-hotfire.jpg" alt="Pulsejet engine during hot-fire testing" />
-          </div>
-          <figcaption class="caption">
-            Replace <code>pulsejet-hotfire.jpg</code> with the hot-fire image from the final report or presentation.
-          </figcaption>
-        </figure>
       </div>
     </header>
 
     <section class="project-section">
-      <div class="stat-grid">
-        <div class="stat-card">
-          <strong>6</strong>
-          <span>hot-fire test days</span>
-        </div>
-        <div class="stat-card">
-          <strong>79</strong>
-          <span>total test trials</span>
-        </div>
-        <div class="stat-card">
-          <strong>17.5 N</strong>
-          <span>mean thrust measured from impulse</span>
-        </div>
-        <div class="stat-card">
-          <strong>98 Hz</strong>
-          <span>dominant resonant combustion frequency</span>
-        </div>
+      <h2>Project Goal</h2>
+      <p>
+        The goal was to create a low-cost, low-part-count propulsion platform that could be
+        designed, built, and tested by an undergraduate team. Pulsejets avoid the compressors
+        and turbines of conventional jet engines while still requiring real combustion,
+        controls, instrumentation, and safety work.
+      </p>
+      <p>
+        Our team focused on three goals: remote engine operation, engine characterization,
+        and analysis of cyclic pulsing behavior.
+      </p>
+
+      <div class="media-scroll" aria-label="Pulsejet hot-fire media">
+        <figure class="media-frame hero-media">
+          <img src="pj_hotfire.png" alt="Pulsejet engine firing during a hot-fire test" />
+        </figure>
+        <figure class="media-frame hero-media">
+          <video controls muted playsinline preload="metadata" poster="pj_hotfire.png">
+            <source src="pj_fire.mp4" type="video/mp4" />
+            Your browser does not support this video.
+          </video>
+        </figure>
+        <figure class="media-frame hero-media">
+          <video controls muted playsinline preload="metadata" poster="pj_hotfire.png">
+            <source src="pj_fireslow.mov" type="video/quicktime" />
+            Your browser does not support this video.
+          </video>
+        </figure>
       </div>
     </section>
 
-    <section class="project-section split-section">
+    <section class="project-section section-split">
       <div>
-        <h2>Project Goal</h2>
+        <h2>Final Assembly</h2>
         <p>
-          The goal was to create a low-cost, low-part-count propulsion platform that could be
-          designed, built, and tested by an undergraduate team. Pulsejets are useful for this kind
-          of project because they avoid the compressors and turbines of conventional jet engines
-          while still requiring real combustion, controls, instrumentation, and safety work.
+          The final system integrated the pulsejet tube, reed-valve intake, fuel line,
+          spark ignition, switchbox, support structure, and DAQ hardware into a single
+          test article. This was the point where the project shifted from isolated
+          subsystem work into full engine operation.
+        </p>
+        <div class="stat-grid">
+          <div class="stat-card"><strong>6</strong><span>hot-fire test days</span></div>
+          <div class="stat-card"><strong>79</strong><span>total test trials</span></div>
+        </div>
+      </div>
+      <figure><div class="media-frame standard"><img src="pj_assembled.png" alt="Assembled pulsejet engine system on a table" /></div></figure>
+    </section>
+
+    <section class="project-section section-split">
+      <div>
+        <h2>System Design</h2>
+        <p>
+          The engine was built around four core elements: the jet tube, reed valve,
+          air duct, and feed/control system. The jet tube geometry controlled the
+          resonant behavior, while the reed valve worked as a high-frequency check
+          valve that admitted air during intake and closed during combustion.
         </p>
         <p>
-          Our team focused on three goals: remote engine operation, engine characterization, and
-          analysis of cyclic pulsing behavior.
+          The fuel and electronics were separated from the hot engine where possible,
+          with remote control for spark, fuel delivery, forced air, and data collection.
         </p>
       </div>
-
-      <figure>
-        <div class="project-image">
-          <img src="pulsejet-system-render.jpg" alt="Rendered overview of the pulsejet engine system" />
-        </div>
-        <figcaption class="caption">
-          Suggested image: full system render showing engine, test stand, controls, and fluids panel.
-        </figcaption>
-      </figure>
+      <figure><div class="media-frame standard"><img src="pjCAD.png" alt="CAD render showing pulsejet engine, valve, air duct, and feed system" /></div></figure>
     </section>
 
     <section class="project-section">
-      <h2>System Design</h2>
+      <h2>Manufacturing</h2>
       <p>
-        The final system included a steel jet tube, custom reed-valve intake, formed air duct,
-        forced-air startup source, gasoline feed system, remote switchbox, spark ignition, thrust
-        stand, and sensor package. The engine geometry controlled the resonant behavior, while
-        the reed valve worked as a high-frequency check valve that admitted air during the intake
-        phase and closed during combustion.
+        Early fit checks used printed prototypes before moving into final metal hardware.
+        The reed valve components were water-jetted and welded, duct walls were stamped
+        using printed tooling, and the jet tube was fabricated from stock steel tubing.
+        Support hardware used steel near hot components and aluminum 8020 for the
+        surrounding structure.
       </p>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Jet Tube</h3>
-          <p>
-            Steel chamber, converging section, and exhaust tube sized around resonant combustion behavior.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Reed Valve</h3>
-          <p>
-            Thin metal reeds deflected open under intake flow and closed during combustion.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Fuel + Controls</h3>
-          <p>
-            Pump, bypass regulator, solenoid valve, spark plug, relays, and remote switchbox enabled safe testing.
-          </p>
-        </article>
+      <div class="media-scroll" aria-label="Pulsejet manufacturing photos">
+        <figure class="media-frame"><img src="pjBuilt.png" alt="Pulsejet support structure, fuel panel, and engine tube hardware" /></figure>
+        <figure class="media-frame"><img src="pj_manufacturing.png" alt="Manufacturing and support structure images for the pulsejet system" /></figure>
       </div>
-    </section>
-
-    <section class="project-section split-section">
-      <figure>
-        <div class="project-image">
-          <img src="pulsejet-exploded-render.jpg" alt="Exploded render of pulsejet valve, chamber, and exhaust tube" />
-        </div>
-        <figcaption class="caption">
-          Suggested image: exploded engine render showing the reed valve, chamber, spark plug, and exhaust tube.
-        </figcaption>
-      </figure>
-
-      <div>
-        <h2>Reed Valve + Airflow</h2>
-        <p>
-          The reed valve was one of the most important design elements. We tested different reed
-          materials, reed lengths, deflection limiters, and duct geometries to increase airflow while
-          keeping the valve responsive at the expected operating frequency.
-        </p>
-        <p>
-          Hotwire anemometer testing validated the final valve and duct at approximately
-          <strong>75 g/s of airflow</strong>, meeting the requirement for the hot-fire campaign.
-          The final reed design had an estimated natural frequency of 328 Hz, above the measured
-          operating frequency of the engine.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section split-section">
-      <div>
-        <h2>Manufacturing</h2>
-        <p>
-          Early fit checks were built with PLA prototypes before moving to final metal parts.
-          The reed valve components were water-jetted and welded, duct walls were stamped using
-          3D-printed molds, and the jet tube was fabricated from stock steel tubing. Support
-          hardware used steel near the hot engine and aluminum 8020 for the surrounding test
-          structure.
-        </p>
-      </div>
-
-      <figure>
-        <div class="project-image">
-          <img src="pulsejet-reed-valve.jpg" alt="Manufactured pulsejet reed valve assembly" />
-        </div>
-        <figcaption class="caption">
-          Suggested image: assembled reed valve or valve/duct manufacturing photos.
-        </figcaption>
-      </figure>
     </section>
 
     <section class="project-section">
       <h2>Testing</h2>
       <p>
-        Testing was built around an EHS-reviewed procedure with defined operator roles, a test
-        card, hazards and mitigations, and a clear-zone process. The setup was designed for fast
-        turnaround between trials while keeping fuel, ignition, forced air, and data collection
-        controlled from a safe distance.
+        Testing was built around an EHS-reviewed procedure with defined operator roles,
+        a test card, hazards and mitigations, and a clear-zone process. The setup was
+        designed for fast turnaround while keeping fuel, ignition, forced air, and data
+        collection controlled from a safe distance.
       </p>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Remote operation</h3>
-          <p>
-            Fuel pump, solenoid valve, spark ignition, and air startup were controlled away from the engine.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>High-speed DAQ</h3>
-          <p>
-            Thrust, chamber pressure, chamber temperature, and valve state were recorded at 2500 Hz.
-          </p>
-        </article>
-
-        <article class="project-card">
-          <h3>Rapid iteration</h3>
-          <p>
-            Test turnaround improved from about 30 minutes to about 2 minutes across the campaign.
-          </p>
-        </article>
+      <div class="project-card-grid">
+        <article class="project-card"><h3>Remote Operation</h3><p>Fuel pump, solenoid valve, spark ignition, and forced air were controlled away from the engine.</p></article>
+        <article class="project-card"><h3>High-Speed DAQ</h3><p>Thrust, chamber pressure, chamber temperature, and valve state were recorded at 2500 Hz.</p></article>
+        <article class="project-card"><h3>Rapid Iteration</h3><p>Trial turnaround improved from about 30 minutes to about 2 minutes across the campaign.</p></article>
       </div>
     </section>
 
-    <section class="project-section split-section">
-      <figure>
-        <div class="project-image">
-          <img src="pulsejet-thrust-fft.jpg" alt="Pulsejet thrust output and FFT analysis plots" />
-        </div>
-        <figcaption class="caption">
-          Suggested image: thrust output plot, FFT plot, or combined results graphic.
-        </figcaption>
-      </figure>
-
-      <div>
-        <h2>Results</h2>
-        <p>
-          The engine achieved pulsed combustion during hot-fire testing. Load cell data showed a
-          clear periodic thrust signature, with a time-averaged thrust of approximately
-          <strong>17.5 N</strong> and peak pulse amplitudes near <strong>50 N</strong>.
-        </p>
-        <p>
-          Frequency analysis of load cell and audio data showed a dominant peak at
-          <strong>98 Hz</strong>, identifying the engine’s fundamental operating frequency.
-          Additional harmonic content suggested a sharp-rise, slow-decay pulse shape, matching
-          expected valved pulsejet behavior.
-        </p>
+    <section class="project-section">
+      <h2>Results</h2>
+      <p>
+        The engine achieved pulsed combustion during hot-fire testing. Load cell data
+        showed a clear periodic thrust signature, with a time-averaged thrust of about
+        <strong>17.5 N</strong> and peak pulse amplitudes near <strong>50 N</strong>.
+        Frequency analysis of load cell and audio data showed a dominant peak at
+        <strong>98 Hz</strong>, identifying the engine’s fundamental operating frequency.
+      </p>
+      <div class="stat-grid">
+        <div class="stat-card"><strong>75 g/s</strong><span>validated airflow through final valve and duct</span></div>
+        <div class="stat-card"><strong>17.5 N</strong><span>mean thrust from impulse</span></div>
+        <div class="stat-card"><strong>~50 N</strong><span>peak pulse amplitude</span></div>
+        <div class="stat-card"><strong>98 Hz</strong><span>measured combustion frequency</span></div>
+      </div>
+      <div class="media-scroll results" aria-label="Pulsejet results and wiring images">
+        <figure class="media-frame"><img src="pjResults.png" alt="Air fuel ratio versus fuel at varied pulsejet tube lengths" /></figure>
+        <figure class="media-frame"><img src="pjResults2.png" alt="Pulsejet axial force versus time thrust result" /></figure>
+        <figure class="media-frame"><img src="pjWiring.png" alt="Pulsejet data acquisition and wiring diagram" /></figure>
       </div>
     </section>
 
     <section class="project-section">
       <h2>Reflection</h2>
       <p>
-        This project showed me that propulsion hardware is never just the engine. The test stand,
-        safety procedure, instrumentation, controls, and iteration loop matter just as much as the
-        combustion hardware. Small changes in reed material, fuel flow, tube length, and startup
-        airflow could determine whether the engine pulsed cleanly, burned without resonance, or
-        failed to sustain combustion.
-      </p>
-      <p>
-        The most valuable part was seeing a custom mechanical system move from theory and CAD
-        into a real, measured test campaign.
+        This project showed me that propulsion hardware is never just the engine.
+        The test stand, safety procedure, instrumentation, controls, and iteration loop
+        matter just as much as the combustion hardware. Small changes in reed material,
+        fuel flow, tube length, and startup airflow could determine whether the engine
+        pulsed cleanly, burned without resonance, or failed to sustain combustion.
       </p>
     </section>
 
