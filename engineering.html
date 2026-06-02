@@ -1,11 +1,293 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>Aaron Cope — Engineering</title><link rel="stylesheet" href="style.css"></head><body>
-<nav><a href="index.html" class="nav-logo">Aaron <span>Cope</span></a><ul class="nav-links"><li><a href="about.html">About</a></li><li><a class="active" href="engineering.html">Engineering</a></li><li><a href="education.html">Education</a></li><li><a href="management.html">Management</a></li><li><a href="hobbies.html">Hobbies</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-<main><header class="page-hero"><div class="page-hero-inner"><p class="eyebrow">Engineering Projects</p><h1>Grouped by systems, not just thumbnails.</h1><p class="subtitle">A more intentional index for aerospace, controls, deicing hardware, and class builds.</p></div></header>
-<div class="content project-index">
-<aside class="index-sidebar"><p class="section-label">Jump To</p><a href="#pulsejet">Pulsejet Engine</a><a href="#floe">Floe</a><a href="#liquid">Project Liquid</a><a href="#class">Class Projects</a></aside>
-<section>
-<div id="pulsejet" class="feature-project"><div class="media-box">Pulsejet hero image / test video</div><div class="feature-copy"><p class="section-label">Standalone Build</p><h2 class="title">Pulsejet Engine</h2><p>A dedicated project page for the pulsejet engine build. Use this as a visually prominent feature, not a small card buried in a grid.</p><div class="pill-row"><span class="pill">Combustion</span><span class="pill">Manufacturing</span><span class="pill">Testing</span></div><a class="button primary" href="engineering/pulsejet-engine.html">Open project →</a></div></div>
-<div id="floe" class="program-block"><div class="program-top"><div><p class="section-label">Product / Field System</p><h2>Floe</h2><p>Organized as a family of deicing and sprayer-testing modules, so the page can eventually show design evolution across prototypes.</p></div><span class="pill">Applied engineering</span></div><div class="module-list"><a class="module" href="engineering/floe/deicer-1.html"><span class="code">Prototype 01</span><strong>Deicer 1</strong><em>Initial concept, mechanism, and lessons learned →</em></a><a class="module" href="engineering/floe/deicer-2.html"><span class="code">Prototype 02</span><strong>Deicer 2</strong><em>Refined architecture and performance changes →</em></a><a class="module" href="engineering/floe/sprayer-testing.html"><span class="code">Testing</span><strong>Sprayer Testing</strong><em>Test setup, data collection, and iteration →</em></a></div></div>
-<div id="liquid" class="program-block"><div class="program-top"><div><p class="section-label">Aerospace Program</p><h2>Project Liquid</h2><p>Presented as a vehicle program with linked subsystems. This should feel more like a technical program map than a row of cards.</p></div><span class="pill">FAR-OUT 2026</span></div><div class="module-list"><a class="module" href="engineering/project-liquid/spark-igniter.html"><span class="code">Ignition</span><strong>Spark Igniter</strong><em>Design and testing of the ignition system →</em></a><a class="module" href="engineering/project-liquid/regen-engine.html"><span class="code">Propulsion</span><strong>Regen Engine + GSE Test Stand</strong><em>Engine design, cooling, and ground support systems →</em></a><a class="module" href="engineering/project-liquid/launch-vehicle.html"><span class="code">Vehicle</span><strong>Launch Vehicle</strong><em>Structures, avionics bay, recovery, integration →</em></a></div></div>
-<div id="class" class="program-block"><div class="program-top"><div><p class="section-label">Course Builds</p><h2>Class Projects</h2><p>Compact lab-notebook style entries keep these useful without overwhelming the main engineering portfolio.</p></div><span class="pill">Coursework</span></div><div class="module-list"><a class="module" href="engineering/class-projects/pid-balancing-beam.html"><span class="code">Controls</span><strong>PID Controlled Balancing Beam</strong><em>Mechatronics, sensing, control tuning →</em></a><a class="module hidden-note" href="engineering/drafts/self-balancing-motorcycle.html"><span class="code">Hidden</span><strong>Self-Balancing Motorcycle</strong><em>Draft page exists but is visually marked hidden →</em></a><a class="module hidden-note" href="engineering/drafts/stirling-engine.html"><span class="code">Hidden</span><strong>Stirling Engine</strong><em>Draft page exists but is visually marked hidden →</em></a></div></div>
-</section></div></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Cope — Engineering</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="engineering.html" class="active">Engineering</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="page-header">
+      <p class="page-label">Engineering</p>
+      <h1 class="page-title">Projects</h1>
+      <p class="page-subtitle">
+        A collection of aerospace, propulsion, controls, and mechanical design work from my time at Yale.
+      </p>
+    </div>
+
+    <div class="content">
+
+      <div class="section">
+        <p class="section-label">Featured Work</p>
+        <p>
+          These projects range from full-system aerospace design to smaller controls and testing builds.
+          I have kept the structure consistent: each card gives the system area, the project scope, and a direct path into the project page.
+        </p>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Project Liquid</p>
+        <p>
+          Liquid rocket development work across vehicle structures, recovery, propulsion, and ignition systems.
+        </p>
+
+        <div class="project-grid">
+
+          <a href="launch-vehicle.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/launch-vehicle.jpg" alt="Launch Vehicle"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Structures · Avionics · Recovery</span>
+              <span class="card-title">Launch Vehicle</span>
+              <span class="card-desc">
+                Full liquid rocket vehicle work, including airframe, avionics bay, recovery hardware, and separation design.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="regen-engine.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/regen-engine.jpg" alt="Regen Engine"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Propulsion · Thermal Design</span>
+              <span class="card-title">Regen Engine</span>
+              <span class="card-desc">
+                Regeneratively cooled liquid rocket engine design, focused on chamber geometry, cooling, and manufacturability.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="spark-igniter.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/spark-igniter.jpg" alt="Spark Igniter"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Propulsion · Ignition</span>
+              <span class="card-title">Spark Igniter</span>
+              <span class="card-desc">
+                Ignition hardware development for reliable startup of the liquid rocket propulsion system.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Pulsejet Engine</p>
+        <p>
+          A senior capstone propulsion project organized as one system with several connected subprojects.
+          This keeps the page from becoming cluttered while still showing the work behind each subsystem.
+        </p>
+
+        <div class="project-grid">
+
+          <a href="pulsejet-engine.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/pulsejet-engine.jpg" alt="Pulsejet Engine"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Capstone · Propulsion</span>
+              <span class="card-title">Pulsejet Engine</span>
+              <span class="card-desc">
+                Full system design, integration, and test campaign for an experimental valved pulsejet engine.
+              </span>
+              <span class="card-arrow">View full project →</span>
+            </div>
+          </a>
+
+          <a href="pulsejet-engine.html#engine" class="project-card">
+            <div class="card-img">
+              <span class="card-img-placeholder">Subsystem</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Engine · Reed Valve</span>
+              <span class="card-title">Engine Assembly</span>
+              <span class="card-desc">
+                Combustion chamber, reed valve geometry, deflection limiters, and design iterations for airflow and manufacturability.
+              </span>
+              <span class="card-arrow">View subsystem →</span>
+            </div>
+          </a>
+
+          <a href="pulsejet-engine.html#feed-system" class="project-card">
+            <div class="card-img">
+              <span class="card-img-placeholder">Subsystem</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Fluids · Fuel Delivery</span>
+              <span class="card-title">Feed System</span>
+              <span class="card-desc">
+                Fuel delivery, fill/drain layout, injector placement, water-flow testing, leak checks, and atomization validation.
+              </span>
+              <span class="card-arrow">View subsystem →</span>
+            </div>
+          </a>
+
+          <a href="pulsejet-engine.html#test-stand" class="project-card">
+            <div class="card-img">
+              <span class="card-img-placeholder">Subsystem</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Testing · Structures</span>
+              <span class="card-title">Test Stand</span>
+              <span class="card-desc">
+                Mechanical test setup for supporting the engine, mounting sensors, and enabling controlled hot-fire testing.
+              </span>
+              <span class="card-arrow">View subsystem →</span>
+            </div>
+          </a>
+
+          <a href="pulsejet-engine.html#controls" class="project-card">
+            <div class="card-img">
+              <span class="card-img-placeholder">Subsystem</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Controls · DAQ</span>
+              <span class="card-title">Controls &amp; Data</span>
+              <span class="card-desc">
+                Sensor calibration, thrust measurement, pressure logging, temperature data, and test-day data acquisition.
+              </span>
+              <span class="card-arrow">View subsystem →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Controls &amp; Mechanical Systems</p>
+        <p>
+          Course and independent projects focused on control systems, mechanism design, thermal systems, and experimental testing.
+        </p>
+
+        <div class="project-grid">
+
+          <a href="self-balancing-motorcycle.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/self-balancing-motorcycle.jpg" alt="Self-Balancing Motorcycle"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Controls · Mechatronics</span>
+              <span class="card-title">Self-Balancing Motorcycle</span>
+              <span class="card-desc">
+                Controller and hardware work for a motorcycle balancing system using sensor feedback and motor actuation.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="pid-balancing-beam.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/pid-balancing-beam.jpg" alt="PID Balancing Beam"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Controls · PID</span>
+              <span class="card-title">PID Balancing Beam</span>
+              <span class="card-desc">
+                Closed-loop beam balancing project using PID control, sensing, calibration, and physical system tuning.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="stirling-engine.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/stirling-engine.jpg" alt="Stirling Engine"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Thermal · Mechanical Design</span>
+              <span class="card-title">Stirling Engine</span>
+              <span class="card-desc">
+                Thermal-mechanical engine project focused on energy conversion, mechanism design, and hands-on fabrication.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-label">Testing &amp; Applied Design</p>
+        <p>
+          Smaller applied engineering projects involving test planning, measurement, iteration, and practical design constraints.
+        </p>
+
+        <div class="project-grid">
+
+          <a href="sprayer-testing.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/sprayer-testing.jpg" alt="Sprayer Testing"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Testing · Fluids</span>
+              <span class="card-title">Sprayer Testing</span>
+              <span class="card-desc">
+                Experimental testing work focused on spray behavior, measurement, and practical system evaluation.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="deicer-1.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/deicer-1.jpg" alt="Deicer Prototype 1"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Product Design · Testing</span>
+              <span class="card-title">Deicer Prototype I</span>
+              <span class="card-desc">
+                Early deicing concept development, prototype design, and testing toward a practical cold-weather system.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+          <a href="deicer-2.html" class="project-card">
+            <div class="card-img">
+              <!-- <img src="images/deicer-2.jpg" alt="Deicer Prototype 2"> -->
+              <span class="card-img-placeholder">Photo coming soon</span>
+            </div>
+            <div class="card-body">
+              <span class="card-tag">Iteration · Prototyping</span>
+              <span class="card-title">Deicer Prototype II</span>
+              <span class="card-desc">
+                Revised deicer design work building on the first prototype through improved layout, usability, and testing.
+              </span>
+              <span class="card-arrow">View project →</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
