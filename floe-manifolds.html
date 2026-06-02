@@ -4,138 +4,170 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aaron Cope — Floe Actuated Manifolds</title>
-  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+      margin-top: 28px;
+    }
+
+    .project-media-card {
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .project-media-card img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .project-media-body {
+      padding: 20px;
+    }
+
+    .project-media-body h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .project-media-body p {
+      margin: 0;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 26px;
+    }
+
+    .detail-card {
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 20px;
+      padding: 22px;
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .detail-card h3 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+    }
+
+    .detail-card p {
+      margin: 0;
+    }
+
+    .hero-photo {
+      width: 100%;
+      max-height: 560px;
+      object-fit: cover;
+      border-radius: 24px;
+      display: block;
+      margin-top: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.10);
+    }
+
+    @media (max-width: 900px) {
+      .project-media-grid,
+      .detail-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-media-card img {
+        height: auto;
+      }
+    }
+  </style>
 </head>
 <body>
   <nav>
-    <a href="../../index.html" class="nav-logo">Aaron <span>Cope</span></a>
+    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
     <ul class="nav-links">
-      <li><a href="../../about.html">About</a></li>
-      <li><a href="../../engineering.html" class="active">Engineering</a></li>
-      <li><a href="../../education.html">Education</a></li>
-      <li><a href="../../contact.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="engineering.html" class="active">Engineering</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main>
     <div class="page-header">
-      <a href="../../engineering.html" class="back-link">← Engineering Projects</a>
+      <a href="engineering.html" class="back-link">← Engineering Projects</a>
       <p class="page-label">Product Design · Fluid Systems · Manufacturing</p>
       <h1 class="page-title">Floe Actuated Manifolds</h1>
-      <p class="page-subtitle">Outdoor fluid-routing manifolds for controlled delivery of viscous rooftop deicing fluid.</p>
+      <p class="page-subtitle">Outdoor manifold systems for controlled rooftop deicing.</p>
     </div>
 
     <div class="content">
-
       <div class="section">
         <p class="section-label">Overview</p>
-        <div class="img-placeholder" style="aspect-ratio: 16 / 9;">
-          <span class="img-placeholder-label">Hero image coming soon</span>
-        </div>
-        <p style="margin-top: 24px;">
-          The Floe Actuated Manifolds are two hardware concepts for routing viscous deicing fluid through rooftop snow-melt systems. Both are controlled from a central box through wired valve actuation.
-        </p>
         <p>
-          The three-valve model supports separate roof zones, while the one-valve model provides the same core function in a simpler package.
+          I worked on two manifold variants that route deicing fluid through rooftop snow-melt systems: a three-valve model for zone control and a one-valve model for simpler installations.
         </p>
+        <img class="hero-photo" src="floe3V.png" alt="Three-valve Floe actuated manifold inside an enclosure" />
       </div>
 
       <div class="section">
-        <p class="section-label">Model Variants</p>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="card-img">
-              <!-- <img src="images/floe-manifold-three-valve.jpg" alt="Three-valve Floe actuated manifold"> -->
-              <span class="card-img-placeholder">3-valve model image</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Multi-Zone</span>
-              <span class="card-title">Three-Valve Model</span>
-              <span class="card-desc">Routes deicing fluid to three controlled outputs for installations that need separate roof zones.</span>
+        <p class="section-label">Product Variants</p>
+        <div class="project-media-grid">
+          <div class="project-media-card">
+            <img src="floe3V.png" alt="Three-valve Floe actuated manifold" />
+            <div class="project-media-body">
+              <h3>Three-Valve Manifold</h3>
+              <p>Routes fluid to three controlled outputs for installations that need separate roof zones.</p>
             </div>
           </div>
 
-          <div class="project-card">
-            <div class="card-img" style="background: linear-gradient(135deg, #1a3260 0%, #3d6fd4 100%);">
-              <!-- <img src="images/floe-manifold-one-valve.jpg" alt="One-valve Floe actuated manifold"> -->
-              <span class="card-img-placeholder">1-valve model image</span>
-            </div>
-            <div class="card-body">
-              <span class="card-tag">Single Output</span>
-              <span class="card-title">One-Valve Model</span>
-              <span class="card-desc">Keeps the same actuation approach in a lower-complexity package for simpler routing needs.</span>
+          <div class="project-media-card">
+            <img src="floe1V.png" alt="Single-valve Floe actuated manifold" />
+            <div class="project-media-body">
+              <h3>One-Valve Manifold</h3>
+              <p>Uses the same control approach in a lower-complexity package for single-zone routing.</p>
             </div>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <p class="section-label">Design & Integration</p>
-        <p>
-          The manifolds were designed as compact outdoor assemblies that connect into a larger rooftop deicing system. The shared architecture kept the layout consistent across both models while allowing the valve count to change.
-        </p>
-        <div class="skills-row" style="margin-top: 24px;">
-          <div class="skills-col">
-            <h4>Fluid System</h4>
-            <ul class="role-list">
-              <li>Routed viscous deicing fluid to rooftop distribution lines</li>
-              <li>Packaged valves, fittings, and manifold hardware for field installation</li>
-              <li>Balanced service access with outdoor enclosure constraints</li>
-            </ul>
+        <p class="section-label">My Role</p>
+        <div class="detail-grid">
+          <div class="detail-card">
+            <h3>System Integration</h3>
+            <p>Packaged valves, tubing, fittings, and enclosure hardware into compact assemblies controlled from a central wired box.</p>
           </div>
-          <div class="skills-col">
-            <h4>Controls Interface</h4>
-            <ul class="role-list">
-              <li>Integrated wired actuation from the central control box</li>
-              <li>Kept control logic consistent between the 3-valve and 1-valve models</li>
-              <li>Designed around repeatable installation and maintenance workflows</li>
-            </ul>
+          <div class="detail-card">
+            <h3>Manufacturing Handoff</h3>
+            <p>Created EBOMs, MBOMs, and SOPs to support repeatable assembly and production planning.</p>
+          </div>
+          <div class="detail-card">
+            <h3>Airtable Tools</h3>
+            <p>Built kit development tools that estimated product weight and tracked inventory across parts and assemblies.</p>
           </div>
         </div>
       </div>
 
       <div class="section">
-        <p class="section-label">Manufacturing Support</p>
+        <p class="section-label">Validation</p>
         <p>
-          I also created the documentation and internal tools needed to move the designs toward repeatable production, including EBOMs, MBOMs, SOPs, and Airtable-based kit development tools.
+          Testing focused on valve cycling and sprayer selection. I ran 40 sprayer trials over five days across several brands, sprayer types, and tubing options to identify the setup with the best coverage in the target zone.
         </p>
-        <div class="skills-row" style="margin-top: 24px;">
-          <div class="skills-col">
-            <h4>Documentation</h4>
-            <ul class="role-list">
-              <li>Defined design-level part requirements through EBOMs</li>
-              <li>Built MBOMs for assembly planning and manufacturing handoff</li>
-              <li>Wrote SOPs for repeatable production workflows</li>
-            </ul>
-          </div>
-          <div class="skills-col">
-            <h4>Operations Tools</h4>
-            <ul class="role-list">
-              <li>Built Airtable tools for kit development and inventory tracking</li>
-              <li>Estimated assembled product weight from kit components</li>
-              <li>Improved visibility into parts, kits, and production readiness</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="section">
-        <p class="section-label">Testing</p>
         <p>
-          Testing focused on valve cycling to check repeatable actuation over extended use. The goal was to validate that the valve assemblies could handle the repeated open-close cycles expected in outdoor deicing applications.
+          The sprayer testing compared range and coverage across different arc angles, with the final choice based on compatibility with the manifold product and installation requirements.
         </p>
-        <div class="img-placeholder" style="aspect-ratio: 16 / 7; margin-top: 24px;">
-          <span class="img-placeholder-label">Valve cycling test image coming soon</span>
-        </div>
       </div>
 
       <div class="section">
         <p class="section-label">Project Summary</p>
         <p>
-          This project combined fluid-system design with the production support needed to build it consistently. My work covered the two manifold variants, valve cycling validation, EBOMs, MBOMs, SOPs, and Airtable tools for kit development and inventory tracking.
+          This project connected product design, test planning, and manufacturing support. The result was a clearer path from early manifold concepts to buildable, documented product variants.
         </p>
       </div>
-
     </div>
   </main>
 </body>
