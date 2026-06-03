@@ -2,173 +2,500 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <title>Aaron Cope — Floe Actuated Manifolds</title>
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    .project-media-grid {
+    /* small page-specific layer; keeps the rest of the site styling intact */
+    .project-hero {
+      padding: 5rem 6vw 3rem;
+    }
+
+    .project-hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 24px;
-      margin-top: 28px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(280px, 0.95fr);
+      gap: 2.5rem;
+      align-items: center;
     }
 
-    .project-media-card {
-      border: 1px solid rgba(255, 255, 255, 0.10);
-      border-radius: 22px;
+    .project-hero h1 {
+      margin: 0.35rem 0 1rem;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.05em;
+    }
+
+    .project-hero p,
+    .project-section p {
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .project-section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 6vw;
+    }
+
+    .project-section h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+      letter-spacing: -0.035em;
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .project-tags span {
+      padding: 0.45rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .media-frame {
+      border-radius: 24px;
       overflow: hidden;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .project-media-card img {
+    .media-frame img,
+    .media-frame video {
       width: 100%;
-      height: 360px;
-      object-fit: cover;
+      display: block;
+      object-fit: contain;
+      background: rgba(0,0,0,0.12);
+    }
+
+    .single-media img,
+    .single-media video {
+      aspect-ratio: 16 / 10;
+    }
+
+    .hero-carousel .media-frame img,
+    .hero-carousel .media-frame video {
+      aspect-ratio: 16 / 9;
+    }
+
+    .carousel {
+      position: relative;
+    }
+
+    .carousel-stage {
+      position: relative;
+    }
+
+    .carousel-item {
+      display: none;
+    }
+
+    .carousel-item.active {
       display: block;
     }
 
-    .project-media-body {
-      padding: 20px;
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-top: 0.9rem;
     }
 
-    .project-media-body h3 {
-      margin: 0 0 8px;
-      font-size: 1.05rem;
+    .carousel-button {
+      width: 2.35rem;
+      height: 2.35rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      color: inherit;
+      cursor: pointer;
+      font-size: 1.15rem;
+      line-height: 1;
     }
 
-    .project-media-body p {
-      margin: 0;
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
     }
 
-    .detail-grid {
+    .carousel-dot {
+      width: 0.55rem;
+      height: 0.55rem;
+      border-radius: 999px;
+      border: 0;
+      padding: 0;
+      background: rgba(255,255,255,0.32);
+      cursor: pointer;
+    }
+
+    .carousel-dot.active {
+      background: currentColor;
+    }
+
+    .caption {
+      margin-top: 0.65rem;
+      font-size: 0.86rem;
+      opacity: 0.7;
+      line-height: 1.45;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat-card {
+      padding: 1.4rem;
+      border-radius: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .stat-card strong {
+      display: block;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-card span {
+      font-size: 0.92rem;
+      line-height: 1.4;
+      opacity: 0.82;
+    }
+
+    .project-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      margin-top: 26px;
+      gap: 1rem;
+      margin-top: 1.5rem;
     }
 
-    .detail-card {
-      border: 1px solid rgba(255, 255, 255, 0.10);
+    .project-card {
+      padding: 1.35rem;
       border-radius: 20px;
-      padding: 22px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .detail-card h3 {
-      margin: 0 0 10px;
+    .project-card h3 {
+      margin: 0 0 0.65rem;
       font-size: 1rem;
     }
 
-    .detail-card p {
+    .project-card p {
       margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.55;
     }
 
-    .hero-photo {
-      width: 100%;
-      max-height: 560px;
-      object-fit: cover;
-      border-radius: 24px;
-      display: block;
-      margin-top: 28px;
-      border: 1px solid rgba(255, 255, 255, 0.10);
+    .results-carousel .media-frame img {
+      aspect-ratio: 16 / 10;
+      background: #fff;
     }
 
-    @media (max-width: 900px) {
-      .project-media-grid,
-      .detail-grid {
+    .project-footer-nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 6vw 5rem;
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 850px) {
+      .project-hero-inner,
+      .split-section {
         grid-template-columns: 1fr;
       }
 
-      .project-media-card img {
-        height: auto;
+      .project-grid,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-hero {
+        padding-top: 3rem;
       }
     }
   </style>
 </head>
+
 <body>
   <nav>
     <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="engineering.html" class="active">Engineering</a></li>
+      <li><a class="active" href="engineering.html">Engineering</a></li>
       <li><a href="education.html">Education</a></li>
+      <li><a href="management.html">Management</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
   <main>
-    <div class="page-header">
-      <a href="engineering.html" class="back-link">← Engineering Projects</a>
-      <p class="page-label">Product Design · Fluid Systems · Manufacturing</p>
-      <h1 class="page-title">Floe Actuated Manifolds</h1>
-      <p class="page-subtitle">Outdoor manifold systems for controlled rooftop deicing.</p>
-    </div>
-
-    <div class="content">
-      <div class="section">
-        <p class="section-label">Overview</p>
-        <p>
-          I worked on two manifold variants that route deicing fluid through rooftop snow-melt systems: a three-valve model for zone control and a one-valve model for simpler installations.
-        </p>
-        <img class="hero-photo" src="floe3V.png" alt="Three-valve Floe actuated manifold inside an enclosure" />
-      </div>
-
-      <div class="section">
-        <p class="section-label">Product Variants</p>
-        <div class="project-media-grid">
-          <div class="project-media-card">
-            <img src="floe3V.png" alt="Three-valve Floe actuated manifold" />
-            <div class="project-media-body">
-              <h3>Three-Valve Manifold</h3>
-              <p>Routes fluid to three controlled outputs for installations that need separate roof zones.</p>
-            </div>
+    <header class="project-hero">
+      <div class="project-hero-inner">
+        <div>
+          <p class="eyebrow">Product Engineering</p>
+          <h1>Floe Actuated Manifolds</h1>
+          <p>
+            Outdoor manifold systems for controlled rooftop deicing. I helped develop two
+            early product variants that route deicing fluid through wired valve control,
+            giving users more control over where fluid is delivered across a roofline.
+          </p>
+          <div class="project-tags">
+            <span>Product Design</span>
+            <span>Fluid Systems</span>
+            <span>Manufacturing</span>
+            <span>Testing</span>
           </div>
+        </div>
 
-          <div class="project-media-card">
-            <img src="floe1V.png" alt="Single-valve Floe actuated manifold" />
-            <div class="project-media-body">
-              <h3>One-Valve Manifold</h3>
-              <p>Uses the same control approach in a lower-complexity package for single-zone routing.</p>
-            </div>
+        <div class="carousel hero-carousel" data-carousel>
+          <div class="carousel-stage">
+            <figure class="carousel-item active media-frame">
+              <img src="floe3V.png" alt="Three-valve floe actuated manifold assembly" />
+            </figure>
+            <figure class="carousel-item media-frame">
+              <img src="floe1V.png" alt="Single-valve floe actuated manifold assembly" />
+            </figure>
+          </div>
+          <div class="carousel-controls" aria-label="Manifold image controls">
+            <button class="carousel-button" type="button" data-prev aria-label="Previous image">‹</button>
+            <div class="carousel-dots" data-dots></div>
+            <button class="carousel-button" type="button" data-next aria-label="Next image">›</button>
           </div>
         </div>
       </div>
+    </header>
 
-      <div class="section">
-        <p class="section-label">My Role</p>
-        <div class="detail-grid">
-          <div class="detail-card">
-            <h3>System Integration</h3>
-            <p>Packaged valves, tubing, fittings, and enclosure hardware into compact assemblies controlled from a central wired box.</p>
-          </div>
-          <div class="detail-card">
-            <h3>Manufacturing Handoff</h3>
-            <p>Created EBOMs, MBOMs, and SOPs to support repeatable assembly and production planning.</p>
-          </div>
-          <div class="detail-card">
-            <h3>Airtable Tools</h3>
-            <p>Built kit development tools that estimated product weight and tracked inventory across parts and assemblies.</p>
-          </div>
+    <section class="project-section">
+      <div class="stat-grid">
+        <div class="stat-card">
+          <strong>2</strong>
+          <span>manifold configurations developed</span>
+        </div>
+        <div class="stat-card">
+          <strong>3</strong>
+          <span>valves on the multi-zone model</span>
+        </div>
+        <div class="stat-card">
+          <strong>40</strong>
+          <span>sprayer compatibility trials</span>
+        </div>
+        <div class="stat-card">
+          <strong>5</strong>
+          <span>days of coverage testing</span>
         </div>
       </div>
+    </section>
 
-      <div class="section">
-        <p class="section-label">Validation</p>
+    <section class="project-section split-section">
+      <div>
+        <h2>Project Goal</h2>
         <p>
-          Testing focused on valve cycling and sprayer selection. I ran 40 sprayer trials over five days across several brands, sprayer types, and tubing options to identify the setup with the best coverage in the target zone.
+          The goal was to turn a new deicing concept into buildable manifold hardware.
+          The system needed to fit inside an outdoor enclosure, connect cleanly to tubing,
+          and support controlled fluid delivery without making installation harder than it
+          needed to be.
         </p>
         <p>
-          The sprayer testing compared range and coverage across different arc angles, with the final choice based on compatibility with the manifold product and installation requirements.
+          The work centered on balancing product function with manufacturability: valve
+          placement, enclosure layout, tubing access, and the documentation needed to make
+          repeatable builds possible.
         </p>
       </div>
 
-      <div class="section">
-        <p class="section-label">Project Summary</p>
+      <figure>
+        <div class="media-frame single-media">
+          <img src="floe3V.png" alt="Three-valve manifold showing valves, fittings, and enclosure layout" />
+        </div>
+      </figure>
+    </section>
+
+    <section class="project-section split-section">
+      <figure>
+        <div class="media-frame single-media">
+          <img src="floe1V.png" alt="Single-valve manifold showing compact enclosure layout" />
+        </div>
+      </figure>
+
+      <div>
+        <h2>System Design</h2>
         <p>
-          This project connected product design, test planning, and manufacturing support. The result was a clearer path from early manifold concepts to buildable, documented product variants.
+          Both variants use a similar enclosure, valve, fitting, and tubing architecture.
+          The three-valve model supports separate outlet zones, while the single-valve model
+          keeps the same basic concept in a smaller configuration.
+        </p>
+        <p>
+          Each valve is actuated through a wired connection to a central control box, keeping
+          the product simple to control while avoiding onboard electronics inside each manifold.
         </p>
       </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Product Variants</h2>
+      <p>
+        The two configurations were developed around the same core architecture, with the
+        valve count changing based on how much zone control the installation required.
+      </p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Three-Valve Manifold</h3>
+          <p>Routes fluid to three controlled zones from one enclosure-mounted manifold assembly.</p>
+        </article>
+        <article class="project-card">
+          <h3>Single-Valve Manifold</h3>
+          <p>Provides a simpler controlled outlet for installations that do not need multiple zones.</p>
+        </article>
+        <article class="project-card">
+          <h3>Shared Architecture</h3>
+          <p>Uses similar fittings, enclosure features, wiring paths, and manufacturing documentation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-section split-section">
+      <div>
+        <h2>Manufacturing</h2>
+        <p>
+          I created EBOMs, MBOMs, and SOPs to support assembly, sourcing, and repeatable
+          manufacturing. This included defining the parts needed for each configuration and
+          translating the design into practical build steps.
+        </p>
+        <p>
+          I also built Airtable tools for kit development, inventory tracking, and product
+          weight estimates, which helped connect engineering decisions to purchasing and
+          fulfillment needs.
+        </p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>EBOMs</h3>
+          <p>Captured the design-level parts required for each manifold configuration.</p>
+        </article>
+        <article class="project-card">
+          <h3>MBOMs + SOPs</h3>
+          <p>Converted the design into buildable manufacturing documentation.</p>
+        </article>
+        <article class="project-card">
+          <h3>Airtable Tools</h3>
+          <p>Tracked kit contents, inventory, and estimated product weight.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Validation</h2>
+      <p>
+        Testing focused on valve cycling and sprayer compatibility. The valve work checked
+        repeated actuation behavior, while the sprayer work compared brands, sprayer types,
+        and tubing types for use with the product.
+      </p>
+
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Valve Cycling</h3>
+          <p>Repeated cycling tests were used to evaluate actuation behavior over extended use.</p>
+        </article>
+        <article class="project-card">
+          <h3>Sprayer Coverage</h3>
+          <p>Sprayers were compared across arc angles for range and coverage in the target zone.</p>
+        </article>
+        <article class="project-card">
+          <h3>Compatibility Trials</h3>
+          <p>Forty trials across five days helped identify the best sprayer and tubing combination.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <h2>Reflection</h2>
+      <p>
+        This project gave me experience moving from product concept to manufacturing-ready
+        documentation. The design work mattered, but so did the supporting tools: bills of
+        materials, assembly procedures, inventory tracking, and tests that made the product
+        easier to build and evaluate.
+      </p>
+    </section>
+
+    <div class="project-footer-nav">
+      <a href="engineering.html">← Back to Engineering</a>
+      <a href="deicer-1.html">Next Project: Deicer System →</a>
     </div>
   </main>
+
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const items = Array.from(carousel.querySelectorAll('.carousel-item'));
+      const prev = carousel.querySelector('[data-prev]');
+      const next = carousel.querySelector('[data-next]');
+      const dotsWrap = carousel.querySelector('[data-dots]');
+      let index = 0;
+
+      function pauseHiddenMedia() {
+        items.forEach((item, i) => {
+          const video = item.querySelector('video');
+          if (video && i !== index) video.pause();
+        });
+      }
+
+      function render() {
+        items.forEach((item, i) => item.classList.toggle('active', i === index));
+        Array.from(dotsWrap.children).forEach((dot, i) => dot.classList.toggle('active', i === index));
+        pauseHiddenMedia();
+      }
+
+      items.forEach((_, i) => {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot';
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Show item ${i + 1}`);
+        dot.addEventListener('click', () => {
+          index = i;
+          render();
+        });
+        dotsWrap.appendChild(dot);
+      });
+
+      prev.addEventListener('click', () => {
+        index = (index - 1 + items.length) % items.length;
+        render();
+      });
+
+      next.addEventListener('click', () => {
+        index = (index + 1) % items.length;
+        render();
+      });
+
+      render();
+    });
+  </script>
 </body>
 </html>
