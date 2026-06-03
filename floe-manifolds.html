@@ -93,6 +93,10 @@
       aspect-ratio: 16 / 9;
     }
 
+    .wide-media img {
+      aspect-ratio: 16 / 8;
+    }
+
     .carousel {
       position: relative;
     }
@@ -209,11 +213,6 @@
       line-height: 1.55;
     }
 
-    .results-carousel .media-frame img {
-      aspect-ratio: 16 / 10;
-      background: #fff;
-    }
-
     .project-footer-nav {
       max-width: 1100px;
       margin: 0 auto;
@@ -259,28 +258,28 @@
     <header class="project-hero">
       <div class="project-hero-inner">
         <div>
-          <p class="eyebrow">Product Engineering</p>
+          <p class="eyebrow">Product Design & Manufacturing</p>
           <h1>Floe Actuated Manifolds</h1>
           <p>
-            Outdoor manifold systems for controlled rooftop deicing. I helped develop two
-            early product variants that route deicing fluid through wired valve control,
-            giving users more control over where fluid is delivered across a roofline.
+            A pair of outdoor manifold concepts for controlled rooftop deicing. The systems route
+            deicing fluid through wired actuated valves, giving the product zone control without
+            making the installed hardware overly complex.
           </p>
           <div class="project-tags">
-            <span>Product Design</span>
             <span>Fluid Systems</span>
-            <span>Manufacturing</span>
-            <span>Testing</span>
+            <span>Outdoor Hardware</span>
+            <span>Manufacturing Support</span>
+            <span>Product Validation</span>
           </div>
         </div>
 
         <div class="carousel hero-carousel" data-carousel>
           <div class="carousel-stage">
             <figure class="carousel-item active media-frame">
-              <img src="floe3V.png" alt="Three-valve floe actuated manifold assembly" />
+              <img src="floe3V.png" alt="Three-valve Floe actuated manifold inside an enclosure" />
             </figure>
             <figure class="carousel-item media-frame">
-              <img src="floe1V.png" alt="Single-valve floe actuated manifold assembly" />
+              <img src="floe1V.png" alt="Single-valve Floe actuated manifold inside an enclosure" />
             </figure>
           </div>
           <div class="carousel-controls" aria-label="Manifold image controls">
@@ -296,19 +295,19 @@
       <div class="stat-grid">
         <div class="stat-card">
           <strong>2</strong>
-          <span>manifold configurations developed</span>
+          <span>manifold variants developed</span>
         </div>
         <div class="stat-card">
           <strong>3</strong>
-          <span>valves on the multi-zone model</span>
+          <span>independently controlled zones on the larger model</span>
         </div>
         <div class="stat-card">
           <strong>40</strong>
-          <span>sprayer compatibility trials</span>
+          <span>sprayer and tubing trials completed</span>
         </div>
         <div class="stat-card">
           <strong>5</strong>
-          <span>days of coverage testing</span>
+          <span>days of outdoor validation work</span>
         </div>
       </div>
     </section>
@@ -317,131 +316,98 @@
       <div>
         <h2>Project Goal</h2>
         <p>
-          The goal was to turn a new deicing concept into buildable manifold hardware.
-          The system needed to fit inside an outdoor enclosure, connect cleanly to tubing,
-          and support controlled fluid delivery without making installation harder than it
-          needed to be.
+          The goal was to turn a simple deicing-fluid delivery system into a more controllable
+          product architecture. Instead of treating the roof as one area, the manifold design lets
+          selected sections receive flow through individually actuated valves.
         </p>
         <p>
-          The work centered on balancing product function with manufacturability: valve
-          placement, enclosure layout, tubing access, and the documentation needed to make
-          repeatable builds possible.
+          I worked on both the three-valve and single-valve versions, keeping the designs similar
+          enough to share manufacturing logic while supporting different installation needs.
         </p>
       </div>
 
       <figure>
         <div class="media-frame single-media">
-          <img src="floe3V.png" alt="Three-valve manifold showing valves, fittings, and enclosure layout" />
+          <img src="floe3V.png" alt="Three-valve manifold with valve branches and main fluid line" />
         </div>
+        <figcaption class="caption">Three-valve manifold layout for zone-controlled fluid routing.</figcaption>
       </figure>
     </section>
 
     <section class="project-section split-section">
       <figure>
         <div class="media-frame single-media">
-          <img src="floe1V.png" alt="Single-valve manifold showing compact enclosure layout" />
+          <img src="floe1V.png" alt="Single-valve manifold with wired actuator and enclosure" />
         </div>
+        <figcaption class="caption">Single-valve configuration using the same basic enclosure and control approach.</figcaption>
       </figure>
 
       <div>
         <h2>System Design</h2>
         <p>
-          Both variants use a similar enclosure, valve, fitting, and tubing architecture.
-          The three-valve model supports separate outlet zones, while the single-valve model
-          keeps the same basic concept in a smaller configuration.
+          Each manifold uses an outdoor enclosure, fluid fittings, valve hardware, and a wired
+          connection to a central control box. The three-valve model supports separate zones, while
+          the single-valve model provides a simpler controlled branch.
         </p>
         <p>
-          Each valve is actuated through a wired connection to a central control box, keeping
-          the product simple to control while avoiding onboard electronics inside each manifold.
+          The design work centered on packaging, serviceability, fluid routing, and keeping the two
+          models close enough that manufacturing documentation could stay consistent.
         </p>
       </div>
     </section>
 
     <section class="project-section">
-      <h2>Product Variants</h2>
+      <h2>Manufacturing Support</h2>
       <p>
-        The two configurations were developed around the same core architecture, with the
-        valve count changing based on how much zone control the installation required.
+        Beyond the physical layouts, I built the documentation and production tools needed to make
+        the concepts easier to assemble, quote, and track.
       </p>
 
       <div class="project-grid">
         <article class="project-card">
-          <h3>Three-Valve Manifold</h3>
-          <p>Routes fluid to three controlled zones from one enclosure-mounted manifold assembly.</p>
+          <h3>BOM Development</h3>
+          <p>Created EBOMs and MBOMs to connect design intent with ordered parts and assembly needs.</p>
         </article>
         <article class="project-card">
-          <h3>Single-Valve Manifold</h3>
-          <p>Provides a simpler controlled outlet for installations that do not need multiple zones.</p>
+          <h3>Assembly Process</h3>
+          <p>Wrote SOPs for manufacturing so builds could follow a repeatable sequence.</p>
         </article>
         <article class="project-card">
-          <h3>Shared Architecture</h3>
-          <p>Uses similar fittings, enclosure features, wiring paths, and manufacturing documentation.</p>
+          <h3>Airtable Tools</h3>
+          <p>Developed kit tools that estimated product weight and tracked inventory for build planning.</p>
         </article>
       </div>
     </section>
 
     <section class="project-section split-section">
       <div>
-        <h2>Manufacturing</h2>
+        <h2>Validation</h2>
         <p>
-          I created EBOMs, MBOMs, and SOPs to support assembly, sourcing, and repeatable
-          manufacturing. This included defining the parts needed for each configuration and
-          translating the design into practical build steps.
+          Valve testing focused on cycling performance to check repeated actuation over time. The
+          goal was to understand whether the selected valve approach could support multi-season
+          outdoor use without adding unnecessary complexity.
         </p>
         <p>
-          I also built Airtable tools for kit development, inventory tracking, and product
-          weight estimates, which helped connect engineering decisions to purchasing and
-          fulfillment needs.
+          I also tested sprayer brands, sprayer types, and tubing options to find a compatible setup
+          with the right throw range and coverage across multiple arc angles. The final comparison
+          used 40 trials across 5 days.
         </p>
       </div>
 
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>EBOMs</h3>
-          <p>Captured the design-level parts required for each manifold configuration.</p>
-        </article>
-        <article class="project-card">
-          <h3>MBOMs + SOPs</h3>
-          <p>Converted the design into buildable manufacturing documentation.</p>
-        </article>
-        <article class="project-card">
-          <h3>Airtable Tools</h3>
-          <p>Tracked kit contents, inventory, and estimated product weight.</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Validation</h2>
-      <p>
-        Testing focused on valve cycling and sprayer compatibility. The valve work checked
-        repeated actuation behavior, while the sprayer work compared brands, sprayer types,
-        and tubing types for use with the product.
-      </p>
-
-      <div class="project-grid">
-        <article class="project-card">
-          <h3>Valve Cycling</h3>
-          <p>Repeated cycling tests were used to evaluate actuation behavior over extended use.</p>
-        </article>
-        <article class="project-card">
-          <h3>Sprayer Coverage</h3>
-          <p>Sprayers were compared across arc angles for range and coverage in the target zone.</p>
-        </article>
-        <article class="project-card">
-          <h3>Compatibility Trials</h3>
-          <p>Forty trials across five days helped identify the best sprayer and tubing combination.</p>
-        </article>
-      </div>
+      <figure>
+        <div class="media-frame wide-media">
+          <img src="sprayTesting.png" alt="Outdoor sprayer coverage testing setup with multiple sprayers in a line" />
+        </div>
+        <figcaption class="caption">Outdoor sprayer testing setup used to compare range, coverage, and tubing compatibility.</figcaption>
+      </figure>
     </section>
 
     <section class="project-section">
       <h2>Reflection</h2>
       <p>
-        This project gave me experience moving from product concept to manufacturing-ready
-        documentation. The design work mattered, but so did the supporting tools: bills of
-        materials, assembly procedures, inventory tracking, and tests that made the product
-        easier to build and evaluate.
+        This project sat between engineering design and product readiness. The technical work was
+        not only choosing valves and routing fluid, but also making sure the result could be built,
+        tested, documented, and supported as a real product.
       </p>
     </section>
 
