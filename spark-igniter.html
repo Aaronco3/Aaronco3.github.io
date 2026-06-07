@@ -230,6 +230,29 @@
       line-height: 1.55;
     }
 
+
+    .achievement-list {
+      display: grid;
+      gap: 0.8rem;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .achievement-list li {
+      padding: 0.95rem 1rem;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      line-height: 1.55;
+    }
+
+    .achievement-list strong {
+      display: block;
+      margin-bottom: 0.2rem;
+      font-size: 0.96rem;
+    }
+
     .results-carousel .media-frame img,
     .results-carousel .media-placeholder {
       aspect-ratio: 16 / 10;
@@ -282,31 +305,28 @@
     <header class="project-hero">
       <div class="project-hero-inner">
         <div>
-          <p class="eyebrow">Project Liquid · Propulsion</p>
-          <h1>Spark Igniter</h1>
+          <p class="eyebrow">Project Liquid · Propulsion Test Hardware</p>
+          <h1>Spark Igniter Test Stand</h1>
           <p>
-            A compact augmented spark igniter for a student-built liquid rocket engine. My work
-            focused on the parts of the subsystem I directly owned: mechanical packaging, CAD,
-            manufacturability, hardware integration, and the test path needed to bring the igniter
-            from concept to engine-ready hardware.
+            Designed and built the standalone test stand for an augmented spark igniter. My work
+            focused on the frame, blast shielding, mounting, plumbing layout, and test-readiness
+            of the setup.
           </p>
           <div class="project-tags">
-            <span>Ignition</span>
-            <span>Propulsion hardware</span>
+            <span>Test stand design</span>
+            <span>Fluid systems</span>
+            <span>Propulsion testing</span>
             <span>Machining</span>
-            <span>Test operations</span>
           </div>
         </div>
 
         <div class="carousel hero-carousel" data-carousel>
           <div class="carousel-stage">
             <figure class="carousel-item active media-frame">
-              <img src="si_hero.png" alt="Spark igniter hardware during testing" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-              <div class="media-placeholder" style="display:none;"><span>Upload a hero image as <strong>si_hero.png</strong>, or replace this source with your preferred igniter photo.</span></div>
+              <img src="asi_fire.jpg" alt="Augmented spark igniter firing during standalone testing" />
             </figure>
             <figure class="carousel-item media-frame">
-              <img src="si_test.png" alt="Spark igniter test setup" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-              <div class="media-placeholder" style="display:none;"><span>Optional test setup image: <strong>si_test.png</strong></span></div>
+              <img src="asi_complete.png" alt="Complete augmented spark igniter test stand during outdoor testing" />
             </figure>
           </div>
           <div class="carousel-controls" aria-label="Spark igniter hero media controls">
@@ -321,44 +341,54 @@
     <section class="project-section">
       <div class="stat-grid">
         <div class="stat-card">
-          <strong>Mechanical package</strong>
-          <span>owned the compact igniter body, interfaces, and assembly constraints</span>
+          <strong>8020 frame</strong>
+          <span>mobile structure for igniter, tankside plumbing, shielding, and controls</span>
         </div>
         <div class="stat-card">
-          <strong>CAD to hardware</strong>
-          <span>translated ignition requirements into manufacturable geometry</span>
+          <strong>Blast shield</strong>
+          <span>operator-side protection between controls and firing hardware</span>
         </div>
         <div class="stat-card">
-          <strong>Integration</strong>
-          <span>designed around plumbing, electrode placement, mounting, and access</span>
+          <strong>Fluid routing</strong>
+          <span>valves, regulators, fittings, and tubing packaged for inspection</span>
         </div>
         <div class="stat-card">
-          <strong>Test path</strong>
-          <span>planned verification steps before use in the full engine</span>
+          <strong>Hot-fire setup</strong>
+          <span>standalone firing configuration before engine integration</span>
         </div>
       </div>
     </section>
 
     <section class="project-section split-section">
       <div>
-        <h2>My Scope</h2>
-        <p>
-          Rather than presenting this as a full team-system overview, this page focuses on the
-          hardware areas I owned. I was responsible for turning the ignition concept into a compact
-          mechanical assembly that could be machined, sealed, mounted, inspected, and connected to
-          the rest of the propulsion system.
-        </p>
-        <p>
-          That meant working through the small details that decide whether propulsion hardware is
-          useful in practice: electrode placement, access for assembly, heat exposure, sealing
-          surfaces, fittings, mounting features, and compatibility with the larger test workflow.
-        </p>
+        <h2>Technical Achievements</h2>
+        <ul class="achievement-list">
+          <li>
+            <strong>Designed the test stand layout.</strong>
+            Packaged the igniter, blast shield, fluid controls, and support hardware onto a compact mobile 8020 frame.
+          </li>
+          <li>
+            <strong>Built the mounting structure.</strong>
+            Created a rigid firing-end support for the igniter while keeping the plumbing and electrical leads accessible.
+          </li>
+          <li>
+            <strong>Integrated the fluid system.</strong>
+            Routed valves, regulators, needle valves, fittings, and tubing across the stand for standalone firing tests.
+          </li>
+          <li>
+            <strong>Machined test hardware.</strong>
+            Manufactured copper and mounting components used at the igniter interface.
+          </li>
+          <li>
+            <strong>Prepared the stand for hot-fire testing.</strong>
+            Supported setup checks, leak/fit inspections, and outdoor firing configuration.
+          </li>
+        </ul>
       </div>
 
       <figure>
         <div class="media-frame single-media">
-          <img src="si_assembled.png" alt="Assembled spark igniter hardware" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-          <div class="media-placeholder" style="display:none;"><span>Upload an assembled hardware photo as <strong>si_assembled.png</strong>.</span></div>
+          <img src="asi_simple.png" alt="Indoor view of the augmented spark igniter test stand" />
         </div>
       </figure>
     </section>
@@ -366,81 +396,55 @@
     <section class="project-section split-section">
       <figure>
         <div class="media-frame single-media">
-          <img src="si_cad.png" alt="CAD model of the spark igniter assembly" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-          <div class="media-placeholder" style="display:none;"><span>Upload CAD render as <strong>si_cad.png</strong>.</span></div>
+          <img src="asi_manufacture.png" alt="Machining a copper component for the augmented spark igniter setup" />
         </div>
       </figure>
 
       <div>
-        <h2>Design Areas I Owned</h2>
-        <p>
-          My design work centered on the physical igniter package. I worked through how the spark
-          source, local flow path, sealing interfaces, and mounting geometry fit into one compact
-          assembly without making the part hard to machine or service.
-        </p>
-        <p>
-          The core challenge was packaging. The igniter needed to place the electrode where it could
-          create a useful ignition source, keep the high-voltage path isolated from nearby grounded
-          hardware, and still leave enough room for fittings, tools, and installation into the engine.
-        </p>
-      </div>
-    </section>
-
-    <section class="project-section split-section">
-      <div>
-        <h2>Manufacturing + Assembly</h2>
-        <p>
-          I kept the part geometry grounded in what we could actually make and inspect. The design
-          avoided unnecessary part count, used simple machining operations where possible, and kept
-          critical interfaces visible enough to check before testing.
-        </p>
-        <p>
-          I also focused on assembly order. Small propulsion parts can become difficult to use if
-          fittings, wires, or seals block each other, so the layout was built around service access,
-          clean routing, and repeatable setup between tests.
-        </p>
-      </div>
-
-      <div class="carousel" data-carousel>
-        <div class="carousel-stage">
-          <figure class="carousel-item active media-frame single-media">
-            <img src="si_parts.png" alt="Spark igniter machined parts" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="media-placeholder" style="display:none;"><span>Upload machined parts image as <strong>si_parts.png</strong>.</span></div>
-          </figure>
-          <figure class="carousel-item media-frame single-media">
-            <img src="si_build.png" alt="Spark igniter assembly process" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="media-placeholder" style="display:none;"><span>Optional build image: <strong>si_build.png</strong></span></div>
-          </figure>
-        </div>
-        <div class="carousel-controls" aria-label="Manufacturing image controls">
-          <button class="carousel-button" type="button" data-prev aria-label="Previous image">‹</button>
-          <div class="carousel-dots" data-dots></div>
-          <button class="carousel-button" type="button" data-next aria-label="Next image">›</button>
-        </div>
+        <h2>Build Work</h2>
+        <ul class="achievement-list">
+          <li>
+            <strong>Frame:</strong> assembled the aluminum extrusion structure and mounting plates.
+          </li>
+          <li>
+            <strong>Shielding:</strong> positioned the blast shield between the firing hardware and operator-side components.
+          </li>
+          <li>
+            <strong>Plumbing:</strong> mounted flow-control hardware so fittings and tubing could be checked before each firing.
+          </li>
+          <li>
+            <strong>Igniter interface:</strong> machined and fit hardware around the copper igniter body and test outlet.
+          </li>
+        </ul>
       </div>
     </section>
 
     <section class="project-section">
-      <h2>Testing Areas I Supported</h2>
-      <p>
-        My testing role was tied to the hardware I owned: making sure the igniter could be installed,
-        connected, checked, and fired in a controlled way before engine-level use. The test path was
-        built to reveal practical problems early, especially issues with fit, sealing, spark placement,
-        routing, and repeatability.
-      </p>
-
+      <h2>Data Collection + Test Readiness</h2>
       <div class="project-grid">
         <article class="project-card">
-          <h3>Packaging</h3>
-          <p>Owned the mechanical layout around the electrode, body, fittings, and mounting interfaces.</p>
+          <h3>Repeatable setup</h3>
+          <p>Fixed mounting points kept the igniter position consistent across tests.</p>
         </article>
         <article class="project-card">
-          <h3>Integration</h3>
-          <p>Designed around the larger engine architecture so the igniter could fit into real test operations.</p>
+          <h3>Visible flow path</h3>
+          <p>Regulators, valves, tubing, and fittings were exposed for pre-test inspection.</p>
         </article>
         <article class="project-card">
-          <h3>Verification</h3>
-          <p>Helped define what needed to be checked before trusting the igniter in the full system.</p>
+          <h3>Remote-friendly layout</h3>
+          <p>The firing end was separated from the control side by the blast shield.</p>
+        </article>
+        <article class="project-card">
+          <h3>Ignition verification</h3>
+          <p>The stand allowed standalone firing before installing igniter hardware into the engine system.</p>
+        </article>
+        <article class="project-card">
+          <h3>Photo/video records</h3>
+          <p>Hot-fire footage was used to confirm flame behavior and document test outcomes.</p>
+        </article>
+        <article class="project-card">
+          <h3>Service access</h3>
+          <p>The layout left room to adjust fittings, wiring, valves, and the igniter mount between firings.</p>
         </article>
       </div>
     </section>
@@ -449,15 +453,13 @@
       <div class="carousel results-carousel" data-carousel>
         <div class="carousel-stage">
           <figure class="carousel-item active media-frame">
-            <img src="si_flame.png" alt="Spark igniter flame test result" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="media-placeholder" style="display:none;"><span>Upload flame or test result image as <strong>si_flame.png</strong>.</span></div>
+            <img src="asi_complete.png" alt="Complete test stand during outdoor firing setup" />
           </figure>
           <figure class="carousel-item media-frame">
-            <img src="si_wiring.png" alt="Spark igniter wiring and controls diagram" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
-            <div class="media-placeholder" style="display:none;"><span>Optional wiring or controls diagram: <strong>si_wiring.png</strong></span></div>
+            <img src="asi_fire.jpg" alt="Augmented spark igniter firing during test" />
           </figure>
         </div>
-        <div class="carousel-controls" aria-label="Results image controls">
+        <div class="carousel-controls" aria-label="Testing image controls">
           <button class="carousel-button" type="button" data-prev aria-label="Previous image">‹</button>
           <div class="carousel-dots" data-dots></div>
           <button class="carousel-button" type="button" data-next aria-label="Next image">›</button>
@@ -466,28 +468,13 @@
 
       <div>
         <h2>Outcome</h2>
-        <p>
-          The result of my work was a more mature igniter package: a design that moved beyond a
-          simple spark concept and addressed the mechanical details needed for installation, testing,
-          and integration with the larger engine.
-        </p>
-        <p>
-          The most valuable outcome was learning how much of propulsion design happens at the
-          interfaces. A small subsystem still has to satisfy thermal, electrical, fluid, manufacturing,
-          and operations constraints at the same time.
-        </p>
+        <ul class="achievement-list">
+          <li>Completed a dedicated standalone platform for augmented spark igniter testing.</li>
+          <li>Enabled safer outdoor firing with shielding, fixed mounting, and separated controls.</li>
+          <li>Improved troubleshooting access for plumbing, wiring, and igniter-side hardware.</li>
+          <li>Provided a test configuration the team could use before engine-level integration.</li>
+        </ul>
       </div>
-    </section>
-
-    <section class="project-section">
-      <h2>Reflection</h2>
-      <p>
-        This project taught me that small hardware can carry a large amount of system risk. The
-        igniter was physically small, but it forced decisions across mechanical design, electrical
-        safety, fluids, manufacturing, and test operations. It also gave me a stronger appreciation for
-        owning interfaces: the places where a design stops being a CAD model and has to work with
-        tools, people, procedures, and the rest of the engine.
-      </p>
     </section>
 
     <div class="project-footer-nav">
