@@ -20,8 +20,8 @@
   </nav>
 
   <main>
-    <header class="project-hero media-hero">
-      <div class="project-hero-copy">
+    <header class="page-hero project-hero">
+      <div class="page-hero-text">
         <p class="eyebrow">Project Liquid</p>
         <h1>Regen Engine</h1>
         <p>
@@ -29,22 +29,22 @@
           bipropellant engine using ethane and nitrous oxide.
         </p>
       </div>
-      <div class="project-hero-media">
-        <img src="regen_hero.jpg" alt="GSE cart and engine test mount for the regen engine" />
+      <div class="page-hero-media">
+        <img src="GSE_CAD.png" alt="Full CAD assembly of the regen engine GSE cart, tanks, test carriage, and engine" />
       </div>
     </header>
 
-    <section class="project-overview-card">
-      <div>
-        <p class="eyebrow">Engine Targets</p>
-        <h2>Single-pass regenerative cooling architecture</h2>
+    <section class="project-overview">
+      <div class="overview-copy">
+        <p class="eyebrow">Overview</p>
+        <h2>Single-pass regenerative cooling engine test system</h2>
         <p>
           The engine program targeted a student-scale liquid rocket engine with single-pass
-          regenerative cooling. My portfolio page focuses on the structures and test hardware
-          I led rather than presenting the full engine as individually owned work.
+          regenerative cooling. My page focuses on the structures and test hardware I led:
+          the tank mounting requirements, GSE cart layout, and engine test carriage.
         </p>
       </div>
-      <div class="stats-grid">
+      <div class="overview-stats">
         <div><span>Fuel</span><strong>Ethane</strong></div>
         <div><span>Oxidizer</span><strong>Nitrous Oxide</strong></div>
         <div><span>Theoretical Thrust</span><strong>4,450 N</strong></div>
@@ -54,32 +54,58 @@
       </div>
     </section>
 
-    <section class="project-section split-section">
+    <section class="project-section media-feature">
+      <div class="section-copy">
+        <p class="eyebrow">Media</p>
+        <h2>System CAD to integrated test hardware</h2>
+        <p>
+          The image set follows the same progression as the pulsejet page: CAD context,
+          subsystem detail, and built hardware. Use the buttons to switch between views.
+        </p>
+      </div>
+
+      <div class="media-wheel" data-carousel>
+        <div class="media-stage">
+          <img src="GSE_CAD.png" alt="Full GSE CAD assembly" data-slide class="active" />
+          <img src="GSE_Unintegrated.png" alt="Unintegrated GSE cart CAD" data-slide />
+          <img src="EngineCarriage.png" alt="Engine test carriage CAD" data-slide />
+          <img src="GSE_complete.jpg" alt="Completed GSE and test carriage hardware" data-slide />
+        </div>
+        <div class="media-controls" aria-label="Regen engine image selector">
+          <button type="button" class="active" data-thumb="0">System CAD</button>
+          <button type="button" data-thumb="1">GSE Layout</button>
+          <button type="button" data-thumb="2">Carriage</button>
+          <button type="button" data-thumb="3">Built Hardware</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section project-split">
+      <div class="project-media">
+        <img src="GSE_Unintegrated.png" alt="GSE cart CAD showing pressure panel, plumbing, enclosure, and carriage" />
+      </div>
       <div class="section-copy">
         <p class="eyebrow">Fall 2024</p>
         <h2>Structures Subteam Lead</h2>
         <p>
           I created design targets, led design reviews, approved design submissions, and
-          detailed change orders for the main support structures around the engine test campaign.
+          wrote change orders for major test-system structures.
         </p>
         <ul class="technical-list">
           <li>Defined requirements for tank mounting, GSE cart, and test carriage assemblies.</li>
           <li>Reviewed interfaces across fluids, electronics, shielding, and engine mounting.</li>
-          <li>Balanced strength, access, mobility, modularity, and test-readiness.</li>
-          <li>Helped finalize the GSE design and assembly for the next test campaign.</li>
+          <li>Balanced strength, access, mobility, modularity, and test readiness.</li>
+          <li>Helped finalize the GSE design and assembly for the engine test campaign.</li>
         </ul>
-      </div>
-      <div class="media-frame">
-        <img src="regen_gse.jpg" alt="Ground support equipment cart for regen engine testing" />
       </div>
     </section>
 
     <section class="project-section">
-      <div class="section-heading">
+      <div class="section-copy wide-copy">
         <p class="eyebrow">Subassemblies</p>
         <h2>Design targets I managed</h2>
       </div>
-      <div class="three-card-grid">
+      <div class="project-cards">
         <article>
           <h3>Tank Mounting</h3>
           <p>
@@ -104,10 +130,7 @@
       </div>
     </section>
 
-    <section class="project-section split-section reverse">
-      <div class="media-frame">
-        <img src="regen_test_carriage.jpg" alt="8020 aluminum extrusion test carriage for regen engine" />
-      </div>
+    <section class="project-section project-split reverse">
       <div class="section-copy">
         <p class="eyebrow">Responsible Engineer</p>
         <h2>Test Carriage</h2>
@@ -117,47 +140,53 @@
         </p>
         <ul class="technical-list">
           <li>Designed for 5,000 lbf continuous axial thrust loading.</li>
+          <li>Validated the carriage structure with ANSYS finite element analysis.</li>
           <li>Used stainless steel 5/16-18 screws and custom gusset plates.</li>
           <li>Accounted for shear and bending loads through frame joints.</li>
           <li>Integrated engine mounting and fluid-system access into the carriage layout.</li>
           <li>Prioritized low-friction thrust transfer into the load cell for cleaner data.</li>
         </ul>
       </div>
+      <div class="project-media">
+        <img src="EngineCarriage.png" alt="Side view CAD of the 8020 engine test carriage and mount" />
+      </div>
     </section>
 
-    <section class="project-section">
-      <div class="section-heading">
-        <p class="eyebrow">Testing</p>
-        <h2>Data collection and test readiness</h2>
+    <section class="project-section project-split">
+      <div class="project-media">
+        <img src="GSE_complete.jpg" alt="Completed regen engine GSE and test carriage during field testing" />
+      </div>
+      <div class="section-copy">
+        <p class="eyebrow">Validation</p>
+        <h2>FEA and pressure testing</h2>
         <p>
-          The support hardware was designed to make the engine, tanks, feed system, electronics,
-          shielding, and thrust measurement hardware accessible during integration and testing.
+          Validation was split by subsystem. The test carriage was checked structurally in
+          ANSYS FEA, while the fluids system was validated through pressure testing before
+          engine test operations.
         </p>
+        <ul class="technical-list">
+          <li>Validated the test carriage with ANSYS FEA before fabrication.</li>
+          <li>Designed the thrust path into a load cell for engine performance data.</li>
+          <li>Used pressure testing to validate fluids-system assembly.</li>
+          <li>Maintained access to valves, fittings, sensors, and load-path hardware.</li>
+        </ul>
       </div>
-      <ul class="technical-list two-column-list">
-        <li>Designed thrust path into a load cell for engine performance data.</li>
-        <li>Reduced friction losses in the carriage to improve thrust measurement quality.</li>
-        <li>Maintained access to fluid interfaces for assembly and troubleshooting.</li>
-        <li>Supported electronics integration on the GSE cart.</li>
-        <li>Included shielding requirements around the fuel tank.</li>
-        <li>Balanced modularity, mobility, safety, and integration access.</li>
-      </ul>
     </section>
 
-    <section class="project-section skills-band">
-      <div class="section-heading">
-        <p class="eyebrow">Technical Skills</p>
-        <h2>Tools and engineering work</h2>
+    <section class="project-section skills-section">
+      <div class="section-copy wide-copy">
+        <p class="eyebrow">Technical Work</p>
+        <h2>Tools and skills</h2>
       </div>
-      <div class="tag-list">
+      <div class="skill-tags">
         <span>OnShape CAD</span>
+        <span>8020 Structures</span>
         <span>Machining</span>
         <span>Manufacturing Planning</span>
-        <span>Finite Element Analysis</span>
-        <span>Testing</span>
-        <span>Data Analysis</span>
-        <span>Trade Studies</span>
-        <span>Project Organization</span>
+        <span>ANSYS FEA</span>
+        <span>Pressure Testing</span>
+        <span>Test Integration</span>
+        <span>Data Collection</span>
       </div>
     </section>
 
@@ -166,5 +195,20 @@
       <a href="spark-igniter.html">Spark Igniter →</a>
     </section>
   </main>
+
+  <script>
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = carousel.querySelectorAll('[data-slide]');
+      const buttons = carousel.querySelectorAll('[data-thumb]');
+
+      buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+          const index = Number(button.dataset.thumb);
+          slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+          buttons.forEach((btn, i) => btn.classList.toggle('active', i === index));
+        });
+      });
+    });
+  </script>
 </body>
 </html>
