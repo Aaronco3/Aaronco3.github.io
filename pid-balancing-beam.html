@@ -82,6 +82,9 @@
     }
 
     .media-frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
       border-radius: 24px;
       border: 1px solid var(--project-border);
@@ -93,8 +96,25 @@
     .media-frame img {
       display: block;
       width: 100%;
+      height: auto;
+      max-height: 560px;
+      object-fit: contain;
+    }
+
+    .hero-media video {
       aspect-ratio: 4 / 3;
-      object-fit: cover;
+      background: #0f172a;
+    }
+
+    .image-frame {
+      background: #f8fafc;
+    }
+
+    .image-frame img {
+      padding: 12px;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      box-sizing: border-box;
     }
 
     .hero-note {
@@ -219,19 +239,13 @@
       line-height: 1.62;
     }
 
-    .media-grid {
+    .media-single {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .media-grid .media-frame video,
-    .media-grid .media-frame img {
-      aspect-ratio: 1.25 / 1;
+      gap: 10px;
     }
 
     .caption {
-      margin: 10px 4px 0;
+      margin: 0 4px;
       color: var(--project-muted);
       font-size: 0.9rem;
       line-height: 1.5;
@@ -261,13 +275,17 @@
       }
 
       .stat-grid,
-      .two-column,
-      .media-grid {
+      .two-column {
         grid-template-columns: 1fr;
       }
 
       .section-kicker {
         position: static;
+      }
+
+      .media-frame video,
+      .media-frame img {
+        max-height: none;
       }
     }
   </style>
@@ -288,27 +306,27 @@
   <main class="project-page">
     <header class="project-hero">
       <div>
-        <p class="eyebrow">Class Project · Mechanical Design</p>
+        <p class="eyebrow">Class Project · Controls & Mechatronics</p>
         <h1>PID Controlled Balancing Beam</h1>
         <p class="hero-summary">
-          Independently designed, assembled, and tuned a PID-controlled beam that stabilized a rolling object at a target set point using sensor feedback and motor actuation.
+          Independently designed, assembled, and tuned a PID-controlled balancing beam that stabilized a rolling object at a target position using sensor feedback and motor-driven linkage actuation.
         </p>
         <div class="hero-tags" aria-label="Project tags">
           <span>PID control</span>
           <span>Arduino</span>
           <span>PCB design</span>
-          <span>Rapid prototyping</span>
+          <span>Linkage actuation</span>
         </div>
       </div>
 
       <div>
-        <figure class="media-frame">
+        <figure class="media-frame hero-media">
           <video controls playsinline preload="metadata">
-            <source src="BalanceVideo(1).mp4" type="video/mp4" />
+            <source src="BalanceVideo_close_to_25mb.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </figure>
-        <p class="hero-note">Primary test media. Keep BalanceVideo.mov in the same folder as this HTML file, or add an MP4 export named BalanceVideo.mp4 for broader browser support.</p>
+        <p class="hero-note">Closed-loop test showing the beam adjusting angle to drive the rolling object toward the target position.</p>
       </div>
     </header>
 
@@ -334,11 +352,11 @@
     <section class="project-section">
       <div class="section-kicker">
         <h2>Project Goal</h2>
-        <p>Build a compact mechatronic system that could sense object position, command a beam angle, and converge toward a selected balance point.</p>
+        <p>Build a compact mechatronic system that could sense object position, command beam angle, and converge toward a selected balance point.</p>
       </div>
       <div class="content-card">
         <p>
-          The project combined mechanical design, electronics, and feedback control. The beam acted as the controlled plant, the rolling object provided a visible response, and the controller adjusted motor output based on measured position error.
+          The project combined mechanical design, electronics, and feedback control. A wave sensor measured the rolling object’s position, an Arduino computed the PID response, and a motor-driven linkage adjusted the beam angle to reduce position error.
         </p>
       </div>
     </section>
@@ -351,7 +369,7 @@
       <div class="two-column">
         <div class="mini-card">
           <h3>Mechanical Integration</h3>
-          <p>Designed and assembled the beam, support structure, rolling-object path, motor interface, and mounting features needed for repeatable testing.</p>
+          <p>Designed and assembled the beam, support structure, rolling-object path, motor interface, and linkage used to rotate the beam during testing.</p>
         </div>
         <div class="mini-card">
           <h3>Feedback Control</h3>
@@ -359,12 +377,25 @@
         </div>
         <div class="mini-card">
           <h3>Sensing</h3>
-          <p>Used a wave sensor to estimate object position and provide the feedback signal used by the controller.</p>
+          <p>Used a wave sensor to estimate object position and provide the measured-position feedback signal used by the controller.</p>
         </div>
         <div class="mini-card">
           <h3>Electronics</h3>
           <p>Designed supporting PCB hardware and integrated the controller, sensor, and motor into a compact electrical system.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>Controller Hardware</h2>
+        <p>The image is shown with containment rather than cropping, so the full board and wiring remain visible.</p>
+      </div>
+      <div class="media-single">
+        <figure class="media-frame image-frame">
+          <img src="Beam_Controller.png" alt="PID balancing beam controller hardware and wiring" />
+        </figure>
+        <p class="caption">Arduino-based controller hardware with wiring for sensing, power, and motor actuation.</p>
       </div>
     </section>
 
@@ -376,31 +407,10 @@
       <div class="content-card">
         <ul class="achievement-list">
           <li><strong>Built a closed-loop control demonstrator</strong> that stabilized a rolling object at a desired set point.</li>
-          <li><strong>Integrated mechanical and electrical subsystems</strong> including beam structure, motor actuation, sensing, Arduino control, and PCB hardware.</li>
+          <li><strong>Integrated mechanical and electrical subsystems</strong> including beam structure, linkage actuation, sensing, Arduino control, and PCB hardware.</li>
           <li><strong>Tuned PID behavior experimentally</strong> by adjusting controller response to reduce oscillation and improve settling behavior.</li>
           <li><strong>Used rapid prototyping</strong> to iterate on packaging, mounting, and component placement during assembly and testing.</li>
         </ul>
-      </div>
-    </section>
-
-    <section class="project-section">
-      <div class="section-kicker">
-        <h2>Media</h2>
-        <p>Add still images here once the final image filenames are in your GitHub folder.</p>
-      </div>
-      <div class="media-grid">
-        <figure>
-          <div class="media-frame">
-            <img src="Beam_Controller.png" alt="PID balancing beam mechanical assembly" />
-          </div>
-          <figcaption class="caption">Suggested still: full mechanical assembly showing the beam, rolling path, and support structure.</figcaption>
-        </figure>
-        <figure>
-          <div class="media-frame">
-            <img src="beam_controls.jpg" alt="PID balancing beam electronics and controller" />
-          </div>
-          <figcaption class="caption">Suggested still: electronics, Arduino controller, sensor wiring, PCB, and motor interface.</figcaption>
-        </figure>
       </div>
     </section>
 
