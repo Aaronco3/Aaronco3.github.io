@@ -75,78 +75,19 @@
       border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .media-frame img,
-    .media-frame video {
+    .media-frame img {
       width: 100%;
       display: block;
       object-fit: contain;
       background: rgba(0,0,0,0.12);
     }
 
-    .single-media img,
-    .single-media video {
+    .single-media img {
       aspect-ratio: 16 / 10;
     }
 
-    .hero-carousel .media-frame img,
-    .hero-carousel .media-frame video {
+    .hero-media img {
       aspect-ratio: 16 / 9;
-    }
-
-    .carousel {
-      position: relative;
-    }
-
-    .carousel-stage {
-      position: relative;
-    }
-
-    .carousel-item {
-      display: none;
-    }
-
-    .carousel-item.active {
-      display: block;
-    }
-
-    .carousel-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.8rem;
-      margin-top: 0.9rem;
-    }
-
-    .carousel-button {
-      width: 2.35rem;
-      height: 2.35rem;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      color: inherit;
-      cursor: pointer;
-      font-size: 1.15rem;
-      line-height: 1;
-    }
-
-    .carousel-dots {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .carousel-dot {
-      width: 0.55rem;
-      height: 0.55rem;
-      border-radius: 999px;
-      border: 0;
-      padding: 0;
-      background: rgba(255,255,255,0.32);
-      cursor: pointer;
-    }
-
-    .carousel-dot.active {
-      background: currentColor;
     }
 
     .caption {
@@ -209,11 +150,6 @@
       line-height: 1.55;
     }
 
-    .results-carousel .media-frame img {
-      aspect-ratio: 16 / 10;
-      background: #fff;
-    }
-
     .project-footer-nav {
       max-width: 1100px;
       margin: 0 auto;
@@ -268,21 +204,11 @@
           </p>
         </div>
 
-        <div class="carousel hero-carousel" data-carousel>
-          <div class="carousel-stage">
-            <figure class="carousel-item active media-frame">
-              <img src="GSE_CAD.png" alt="CAD model of regen engine ground support equipment and test carriage" />
-            </figure>
-            <figure class="carousel-item media-frame">
-              <img src="GSE_complete.jpg" alt="Integrated regen engine test hardware at the field site" />
-            </figure>
+        <figure>
+          <div class="media-frame hero-media">
+            <img src="GSE_CAD.png" alt="CAD model of regen engine ground support equipment and test carriage" />
           </div>
-          <div class="carousel-controls" aria-label="Regen engine media controls">
-            <button class="carousel-button" type="button" data-prev aria-label="Previous media">‹</button>
-            <div class="carousel-dots" data-dots></div>
-            <button class="carousel-button" type="button" data-next aria-label="Next media">›</button>
-          </div>
-        </div>
+        </figure>
       </div>
     </header>
 
@@ -312,9 +238,9 @@
         <h2>Project Goal</h2>
         <p>
           The regen engine program targeted a single-pass regeneratively cooled liquid engine
-          using ethane fuel and nitrous oxide oxidizer. The engine work required supporting
-          hardware that could safely route fluids, hold tanks, protect operators, and collect
-          thrust and pressure data during testing.
+          using ethane fuel and nitrous oxide oxidizer. The engine required supporting hardware
+          that could safely route fluids, hold tanks, protect operators, and collect thrust and
+          pressure data during testing.
         </p>
         <p>
           I led structures work in Fall 2024, setting design targets, reviewing team designs,
@@ -327,6 +253,7 @@
         <div class="media-frame single-media">
           <img src="GSE_Unintegrated.png" alt="Unintegrated CAD layout of regen engine GSE and test carriage" />
         </div>
+        <figcaption class="caption">Unintegrated GSE and carriage layout used for subsystem integration planning.</figcaption>
       </figure>
     </section>
 
@@ -335,6 +262,7 @@
         <div class="media-frame single-media">
           <img src="EngineCarriage.png" alt="CAD model of the regen engine test carriage and thrust structure" />
         </div>
+        <figcaption class="caption">Engine carriage layout for thrust loading, mounting, and load-cell integration.</figcaption>
       </figure>
 
       <div>
@@ -357,9 +285,9 @@
         <h2>GSE and Integration</h2>
         <p>
           The ground support layout combined tank mounting, pressure plumbing, electronics,
-          shielding, and engine access into a mobile test configuration. The goal was to keep
-          the system serviceable during integration while maintaining physical separation between
-          propellant sources and sensitive hardware.
+          shielding, and engine access into a mobile test configuration. The system needed to be
+          serviceable during integration while maintaining physical separation between propellant
+          sources and sensitive hardware.
         </p>
         <p>
           The fluids system was validated through pressure testing before hot-fire operations.
@@ -368,21 +296,12 @@
         </p>
       </div>
 
-      <div class="carousel" data-carousel>
-        <div class="carousel-stage">
-          <figure class="carousel-item active media-frame single-media">
-            <img src="GSE_CAD.png" alt="Full CAD model of tanks, GSE cart, test carriage, and regen engine" />
-          </figure>
-          <figure class="carousel-item media-frame single-media">
-            <img src="GSE_complete.jpg" alt="Completed regen engine GSE and test carriage integrated for field testing" />
-          </figure>
+      <figure>
+        <div class="media-frame single-media">
+          <img src="GSE_complete.jpg" alt="Completed regen engine GSE and test carriage integrated for field testing" />
         </div>
-        <div class="carousel-controls" aria-label="GSE image controls">
-          <button class="carousel-button" type="button" data-prev aria-label="Previous image">‹</button>
-          <div class="carousel-dots" data-dots></div>
-          <button class="carousel-button" type="button" data-next aria-label="Next image">›</button>
-        </div>
-      </div>
+        <figcaption class="caption">Integrated GSE hardware after assembly and pressure-test preparation.</figcaption>
+      </figure>
     </section>
 
     <section class="project-section">
@@ -410,38 +329,27 @@
       </div>
     </section>
 
-    <section class="project-section split-section">
-      <div class="carousel results-carousel" data-carousel>
-        <div class="carousel-stage">
-          <figure class="carousel-item active media-frame">
-            <img src="GSE_Unintegrated.png" alt="CAD layout of regen engine GSE before full integration" />
-          </figure>
-          <figure class="carousel-item media-frame">
-            <img src="EngineCarriage.png" alt="Detailed CAD view of regen engine test carriage" />
-          </figure>
-          <figure class="carousel-item media-frame">
-            <img src="GSE_complete.jpg" alt="Completed regen engine test setup at the field site" />
-          </figure>
-        </div>
-        <div class="carousel-controls" aria-label="Results image controls">
-          <button class="carousel-button" type="button" data-prev aria-label="Previous image">‹</button>
-          <div class="carousel-dots" data-dots></div>
-          <button class="carousel-button" type="button" data-next aria-label="Next image">›</button>
-        </div>
-      </div>
+    <section class="project-section">
+      <h2>Technical Contributions</h2>
+      <p>
+        My work sat at the boundary between structures, fluids, and test operations. I focused
+        on converting engine requirements into test hardware that could be reviewed, assembled,
+        validated, and operated by the team.
+      </p>
 
-      <div>
-        <h2>Technical Contributions</h2>
-        <p>
-          My work sat at the boundary between structures, fluids, and test operations. I focused
-          on converting engine requirements into test hardware that could be reviewed, assembled,
-          validated, and operated by the team.
-        </p>
-        <p>
-          Key contributions included test carriage ownership, ANSYS structural validation,
-          GSE design review, tank mounting requirements, shielding considerations, and pressure
-          testing support for the fluids system.
-        </p>
+      <div class="project-grid">
+        <article class="project-card">
+          <h3>Structures Lead</h3>
+          <p>Set design targets, reviewed subsystem designs, and coordinated interfaces across structures, fluids, and electronics.</p>
+        </article>
+        <article class="project-card">
+          <h3>Tank and GSE Layout</h3>
+          <p>Supported tank mounting, shielding, cart layout, and accessibility for integration and troubleshooting.</p>
+        </article>
+        <article class="project-card">
+          <h3>Test Readiness</h3>
+          <p>Helped prepare the system for field operations through structural checks, pressure testing, and test-data planning.</p>
+        </article>
       </div>
     </section>
 
@@ -469,52 +377,5 @@
       <a href="spark-igniter.html">Next Project: Spark Igniter →</a>
     </div>
   </main>
-
-  <script>
-    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
-      const items = Array.from(carousel.querySelectorAll('.carousel-item'));
-      const prev = carousel.querySelector('[data-prev]');
-      const next = carousel.querySelector('[data-next]');
-      const dotsWrap = carousel.querySelector('[data-dots]');
-      let index = 0;
-
-      function pauseHiddenMedia() {
-        items.forEach((item, i) => {
-          const video = item.querySelector('video');
-          if (video && i !== index) video.pause();
-        });
-      }
-
-      function render() {
-        items.forEach((item, i) => item.classList.toggle('active', i === index));
-        Array.from(dotsWrap.children).forEach((dot, i) => dot.classList.toggle('active', i === index));
-        pauseHiddenMedia();
-      }
-
-      items.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'carousel-dot';
-        dot.type = 'button';
-        dot.setAttribute('aria-label', `Show item ${i + 1}`);
-        dot.addEventListener('click', () => {
-          index = i;
-          render();
-        });
-        dotsWrap.appendChild(dot);
-      });
-
-      prev.addEventListener('click', () => {
-        index = (index - 1 + items.length) % items.length;
-        render();
-      });
-
-      next.addEventListener('click', () => {
-        index = (index + 1) % items.length;
-        render();
-      });
-
-      render();
-    });
-  </script>
 </body>
 </html>
