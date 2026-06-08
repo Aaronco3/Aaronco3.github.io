@@ -22,25 +22,16 @@
     }
 
     .project-hero h1 {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
       margin: 0.35rem 0 1rem;
       font-size: clamp(2.4rem, 6vw, 5rem);
       line-height: 0.95;
-      letter-spacing: -0.03em;
-      color: #fff;
+      letter-spacing: -0.05em;
     }
 
-    .project-hero p {
-      font-size: 1rem;
-      line-height: 1.7;
-      color: rgba(255,255,255,.62);
-    }
+    .project-hero p,
     .project-section p {
       font-size: 1rem;
       line-height: 1.7;
-      color: var(--ink-2, #3d3830);
     }
 
     .project-section {
@@ -50,13 +41,9 @@
     }
 
     .project-section h2 {
-      font-family: 'Instrument Serif', serif;
-      font-style: italic;
-      font-weight: 400;
       margin: 0 0 1rem;
       font-size: clamp(1.7rem, 3vw, 2.6rem);
-      letter-spacing: -0.025em;
-      color: var(--ink, #1a1612);
+      letter-spacing: -0.035em;
     }
 
     .split-section {
@@ -138,7 +125,7 @@
       width: 2.35rem;
       height: 2.35rem;
       border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.08);
       color: inherit;
       cursor: pointer;
@@ -158,12 +145,12 @@
       border-radius: 999px;
       border: 0;
       padding: 0;
-      background: var(--border-2, #c4bdb0);
+      background: rgba(255,255,255,0.32);
       cursor: pointer;
     }
 
     .carousel-dot.active {
-      background: var(--accent, #c44b1e);
+      background: currentColor;
     }
 
     .caption {
@@ -211,17 +198,13 @@
     .project-card {
       padding: 1.35rem;
       border-radius: 20px;
-      background: var(--bg, #f4f2ed);
-      border: 1px solid var(--border, #d8d2c6);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
     }
 
     .project-card h3 {
-      font-family: 'DM Mono', monospace;
-      font-size: .72rem;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: var(--accent, #c44b1e);
-      margin: 0 0 .6rem;
+      margin: 0 0 0.65rem;
+      font-size: 1rem;
     }
 
     .project-card p {
@@ -293,20 +276,20 @@
     </header>
 
     <section class="project-section">
-      <div class="proj-stat-grid">
-        <div class="proj-stat-card">
+      <div class="stat-grid">
+        <div class="stat-card">
           <strong>2</strong>
           <span>manifold variants developed</span>
         </div>
-        <div class="proj-stat-card">
+        <div class="stat-card">
           <strong>25%</strong>
           <span>cost reduction upon iteration</span>
         </div>
-        <div class="proj-stat-card">
+        <div class="stat-card">
           <strong>40</strong>
           <span>sprayer and tubing trials conducted</span>
         </div>
-        <div class="proj-stat-card">
+        <div class="stat-card">
           <strong>5</strong>
           <span>days of outdoor validation work</span>
         </div>
