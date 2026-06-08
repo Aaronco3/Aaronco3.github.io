@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Cope — PID Balancing Beam</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --project-max: 1120px;
+      --project-border: rgba(15, 23, 42, 0.12);
+      --project-soft: rgba(15, 23, 42, 0.055);
+      --project-text: #18202f;
+      --project-muted: #657084;
+      --project-accent: #315d91;
+    }
+
+    body {
+      color: var(--project-text);
+    }
+
+    .project-page {
+      width: min(var(--project-max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .project-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1.05fr);
+      gap: 34px;
+      align-items: center;
+      padding: 34px;
+      border: 1px solid var(--project-border);
+      border-radius: 28px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(247,249,252,0.96));
+      box-shadow: 0 22px 60px rgba(15, 23, 42, 0.08);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--project-accent);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-hero h1 {
+      margin: 0;
+      font-size: clamp(2.35rem, 5vw, 4.2rem);
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-summary {
+      margin: 22px 0 0;
+      max-width: 60ch;
+      color: var(--project-muted);
+      font-size: 1.04rem;
+      line-height: 1.68;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .hero-tags span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 13px;
+      border: 1px solid var(--project-border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.72);
+      color: #36445a;
+      font-size: 0.86rem;
+      font-weight: 650;
+    }
+
+    .media-frame {
+      overflow: hidden;
+      border-radius: 24px;
+      border: 1px solid var(--project-border);
+      background: #0f172a;
+      box-shadow: 0 18px 46px rgba(15, 23, 42, 0.16);
+    }
+
+    .media-frame video,
+    .media-frame img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .hero-note {
+      margin: 12px 4px 0;
+      color: var(--project-muted);
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin: 22px 0 34px;
+    }
+
+    .stat-card {
+      padding: 18px;
+      border: 1px solid var(--project-border);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.74);
+    }
+
+    .stat-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.8rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--project-muted);
+    }
+
+    .stat-card span {
+      font-size: 1rem;
+      font-weight: 720;
+      color: #1e293b;
+    }
+
+    .project-section {
+      display: grid;
+      grid-template-columns: 0.72fr 1.28fr;
+      gap: 34px;
+      padding: 34px 0;
+      border-top: 1px solid var(--project-border);
+    }
+
+    .section-kicker {
+      position: sticky;
+      top: 90px;
+      align-self: start;
+    }
+
+    .section-kicker p {
+      margin: 12px 0 0;
+      color: var(--project-muted);
+      line-height: 1.6;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.45rem, 3vw, 2rem);
+      letter-spacing: -0.03em;
+    }
+
+    .content-card {
+      padding: 26px;
+      border: 1px solid var(--project-border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.72);
+    }
+
+    .content-card p {
+      margin: 0;
+      color: var(--project-muted);
+      line-height: 1.72;
+    }
+
+    .achievement-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .achievement-list li {
+      padding: 16px 16px 16px 18px;
+      border-left: 3px solid var(--project-accent);
+      border-radius: 16px;
+      background: var(--project-soft);
+      color: #334155;
+      line-height: 1.58;
+    }
+
+    .achievement-list strong {
+      color: #172033;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .mini-card {
+      min-height: 100%;
+      padding: 20px;
+      border: 1px solid var(--project-border);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.72);
+    }
+
+    .mini-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.03rem;
+      letter-spacing: -0.015em;
+    }
+
+    .mini-card p {
+      margin: 0;
+      color: var(--project-muted);
+      line-height: 1.62;
+    }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .media-grid .media-frame video,
+    .media-grid .media-frame img {
+      aspect-ratio: 1.25 / 1;
+    }
+
+    .caption {
+      margin: 10px 4px 0;
+      color: var(--project-muted);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 16px;
+      color: var(--project-accent);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 860px) {
+      .project-hero,
+      .project-section {
+        grid-template-columns: 1fr;
+      }
+
+      .project-hero {
+        padding: 24px;
+      }
+
+      .stat-grid,
+      .two-column,
+      .media-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-kicker {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="engineering.html">Engineering</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="management.html">Management</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="project-page">
+    <header class="project-hero">
+      <div>
+        <p class="eyebrow">Class Project · Mechanical Design</p>
+        <h1>PID Controlled Balancing Beam</h1>
+        <p class="hero-summary">
+          Independently designed, assembled, and tuned a PID-controlled beam that stabilized a rolling object at a target set point using sensor feedback and motor actuation.
+        </p>
+        <div class="hero-tags" aria-label="Project tags">
+          <span>PID control</span>
+          <span>Arduino</span>
+          <span>PCB design</span>
+          <span>Rapid prototyping</span>
+        </div>
+      </div>
+
+      <div>
+        <figure class="media-frame">
+          <video controls playsinline preload="metadata">
+            <source src="BalanceVideo.mov" type="video/quicktime" />
+            <source src="BalanceVideo.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+        <p class="hero-note">Primary test media. Keep BalanceVideo.mov in the same folder as this HTML file, or add an MP4 export named BalanceVideo.mp4 for broader browser support.</p>
+      </div>
+    </header>
+
+    <section class="stat-grid" aria-label="Project details">
+      <div class="stat-card">
+        <strong>Course</strong>
+        <span>MENG 185</span>
+      </div>
+      <div class="stat-card">
+        <strong>Timeline</strong>
+        <span>Spring 2023</span>
+      </div>
+      <div class="stat-card">
+        <strong>Role</strong>
+        <span>Independent design</span>
+      </div>
+      <div class="stat-card">
+        <strong>System</strong>
+        <span>Closed-loop beam</span>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>Project Goal</h2>
+        <p>Build a compact mechatronic system that could sense object position, command a beam angle, and converge toward a selected balance point.</p>
+      </div>
+      <div class="content-card">
+        <p>
+          The project combined mechanical design, electronics, and feedback control. The beam acted as the controlled plant, the rolling object provided a visible response, and the controller adjusted motor output based on measured position error.
+        </p>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>System Design</h2>
+        <p>The final build integrated the structure, sensing, controller, actuation, and supporting electronics into a working prototype.</p>
+      </div>
+      <div class="two-column">
+        <div class="mini-card">
+          <h3>Mechanical Integration</h3>
+          <p>Designed and assembled the beam, support structure, rolling-object path, motor interface, and mounting features needed for repeatable testing.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Feedback Control</h3>
+          <p>Implemented a PID control loop on an Arduino controller to convert position error into motor commands that adjusted beam angle.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Sensing</h3>
+          <p>Used a wave sensor to estimate object position and provide the feedback signal used by the controller.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Electronics</h3>
+          <p>Designed supporting PCB hardware and integrated the controller, sensor, and motor into a compact electrical system.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>Technical Work</h2>
+        <p>Concise list of the parts of the project that are most useful to show in a portfolio.</p>
+      </div>
+      <div class="content-card">
+        <ul class="achievement-list">
+          <li><strong>Built a closed-loop control demonstrator</strong> that stabilized a rolling object at a desired set point.</li>
+          <li><strong>Integrated mechanical and electrical subsystems</strong> including beam structure, motor actuation, sensing, Arduino control, and PCB hardware.</li>
+          <li><strong>Tuned PID behavior experimentally</strong> by adjusting controller response to reduce oscillation and improve settling behavior.</li>
+          <li><strong>Used rapid prototyping</strong> to iterate on packaging, mounting, and component placement during assembly and testing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>Media</h2>
+        <p>Add still images here once the final image filenames are in your GitHub folder.</p>
+      </div>
+      <div class="media-grid">
+        <figure>
+          <div class="media-frame">
+            <img src="pid_beam_assembly.jpg" alt="PID balancing beam mechanical assembly" />
+          </div>
+          <figcaption class="caption">Suggested still: full mechanical assembly showing the beam, rolling path, and support structure.</figcaption>
+        </figure>
+        <figure>
+          <div class="media-frame">
+            <img src="pid_beam_electronics.jpg" alt="PID balancing beam electronics and controller" />
+          </div>
+          <figcaption class="caption">Suggested still: electronics, Arduino controller, sensor wiring, PCB, and motor interface.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <div class="section-kicker">
+        <h2>Takeaway</h2>
+        <p>A small class project, but a useful demonstration of hands-on control systems work.</p>
+      </div>
+      <div class="content-card">
+        <p>
+          This project connected mechanical design with real sensor feedback and actuator control. It gave me practice turning a control concept into physical hardware, then debugging the system through assembly, integration, and testing.
+        </p>
+        <a class="back-link" href="engineering.html">← Back to Engineering</a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
