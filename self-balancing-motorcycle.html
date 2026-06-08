@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aaron Cope — Self-Balancing Motorcycle</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .project-hero {
+      padding: 7rem 8% 4rem;
+      background: radial-gradient(circle at top left, rgba(79, 70, 229, 0.12), transparent 34rem), linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    }
+
+    .project-hero-grid {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 2.4rem;
+      align-items: center;
+    }
+
+    .project-kicker {
+      margin: 0 0 0.75rem;
+      color: #4f46e5;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+      color: #0f172a;
+    }
+
+    .project-hero p {
+      margin: 1.1rem 0 0;
+      max-width: 680px;
+      color: #475569;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .hero-card,
+    .stat-card,
+    .detail-card,
+    .equation-card {
+      background: #ffffff;
+      border: 1px solid rgba(148, 163, 184, 0.28);
+      border-radius: 22px;
+      box-shadow: 0 14px 45px rgba(15, 23, 42, 0.06);
+    }
+
+    .hero-card {
+      padding: 1.5rem;
+      border-radius: 28px;
+      box-shadow: 0 24px 70px rgba(15, 23, 42, 0.12);
+    }
+
+    .hero-card h2 {
+      margin: 0 0 1rem;
+      color: #0f172a;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 0.9rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .hero-list li {
+      padding: 1rem;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid rgba(148, 163, 184, 0.24);
+      color: #475569;
+      line-height: 1.55;
+    }
+
+    .hero-list strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: #0f172a;
+      font-size: 0.95rem;
+    }
+
+    .project-section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 4rem 8%;
+    }
+
+    .section-eyebrow {
+      margin: 0 0 0.65rem;
+      color: #4f46e5;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .project-section h2 {
+      margin: 0 0 1rem;
+      color: #0f172a;
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      letter-spacing: -0.04em;
+    }
+
+    .project-section p {
+      color: #475569;
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .stat-card {
+      padding: 1.25rem;
+    }
+
+    .stat-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 1.55rem;
+      letter-spacing: -0.04em;
+    }
+
+    .stat-card span {
+      display: block;
+      margin-top: 0.35rem;
+      color: #64748b;
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    .detail-card {
+      padding: 1.4rem;
+    }
+
+    .detail-card h3 {
+      margin: 0 0 0.75rem;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+    }
+
+    .detail-card ul {
+      margin: 0;
+      padding-left: 1.15rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+
+    .equation-card {
+      padding: 1.2rem;
+      margin-top: 1rem;
+      color: #0f172a;
+      overflow-x: auto;
+    }
+
+    .equation-card code {
+      white-space: nowrap;
+      color: #334155;
+      font-size: 0.96rem;
+    }
+
+    .callout {
+      margin-top: 1.4rem;
+      padding: 1.2rem 1.3rem;
+      border-left: 4px solid #4f46e5;
+      background: #eef2ff;
+      border-radius: 18px;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .project-hero-grid,
+      .two-col,
+      .stat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-hero {
+        padding-top: 6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo">Aaron <span>Cope</span></a>
+    <ul class="nav-links">
+      <li><a href="about.html">About</a></li>
+      <li><a class="active" href="engineering.html">Engineering</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="management.html">Management</a></li>
+      <li><a href="hobbies.html">Hobbies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <header class="project-hero">
+      <div class="project-hero-grid">
+        <div>
+          <p class="project-kicker">Controls • Mechatronics • Embedded Systems</p>
+          <h1>Self-Balancing Motorcycle</h1>
+          <p>
+            A controls project using the Arduino Engineering Kit Rev2 motorcycle platform. The system used flywheel stabilization, stepper-based steering alignment, and encoder feedback to drive forward and stop near a target distance.
+          </p>
+        </div>
+
+        <div class="hero-card">
+          <h2>Project focus</h2>
+          <ul class="hero-list">
+            <li><strong>Balance</strong>Implemented and tuned a PD controller for flywheel-based roll stabilization.</li>
+            <li><strong>Drive</strong>Used encoder counts and duty-cycle ramping to move toward the target distance without destabilizing the bike.</li>
+            <li><strong>Steering</strong>Held the front wheel at a straight reference position because the required path was linear.</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <section class="project-section">
+      <p class="section-eyebrow">Project snapshot</p>
+      <h2>Balancing first, then driving forward.</h2>
+      <p>
+        The motorcycle was programmed to stabilize in place before beginning forward motion. Once balanced, the drive motor ramped up rather than jumping instantly to full duty, reducing slip and sudden disturbances. The flywheel stayed active through acceleration and braking.
+      </p>
+
+      <div class="stat-grid">
+        <div class="stat-card">
+          <strong>AEKR2</strong>
+          <span>Arduino Engineering Kit Rev2 hardware platform</span>
+        </div>
+        <div class="stat-card">
+          <strong>PD</strong>
+          <span>Flywheel balance controller</span>
+        </div>
+        <div class="stat-card">
+          <strong>5 s</strong>
+          <span>Initial balancing delay before forward motion</span>
+        </div>
+        <div class="stat-card">
+          <strong>2 m</strong>
+          <span>Target travel distance</span>
+        </div>
+        <div class="stat-card">
+          <strong>8670</strong>
+          <span>Encoder-count trigger used for stopping</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <p class="section-eyebrow">Controls implementation</p>
+      <h2>Three control tasks on one unstable platform.</h2>
+      <div class="two-col">
+        <div class="detail-card">
+          <h3>Balance control</h3>
+          <ul>
+            <li>Used roll feedback to command the flywheel motor.</li>
+            <li>Started from model-based PD gains, then tuned on hardware.</li>
+            <li>Final gains used: Kp = -6601, Kd = -431.</li>
+            <li>Stable runs lasted roughly 30–60 seconds during testing.</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h3>Drive control</h3>
+          <ul>
+            <li>Delayed forward motion until after initial balancing.</li>
+            <li>Ramped motor duty to reduce slipping and balance disturbances.</li>
+            <li>Used encoder feedback to estimate distance traveled.</li>
+            <li>Ramped down drive duty after reaching the stop trigger.</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h3>Steering control</h3>
+          <ul>
+            <li>Used the steering motor to hold a forward-facing reference.</li>
+            <li>Did not require path-following because the task was a straight-line run.</li>
+            <li>Kept steering simple so tuning effort could focus on balance and drive behavior.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <p class="section-eyebrow">Tuning approach</p>
+      <h2>Modeling gave a starting point; hardware tuning made it work.</h2>
+      <div class="two-col">
+        <div class="detail-card">
+          <h3>Controller tuning</h3>
+          <p>
+            A simplified plant model was used in MATLAB to choose initial PD gains. Those values helped get the controller close, but the final behavior depended on real testing because the motorcycle was sensitive to vibration, friction, and small parameter errors.
+          </p>
+        </div>
+
+        <div class="detail-card">
+          <h3>Observed issue</h3>
+          <p>
+            The main tuning challenge was sign-change behavior: when the roll angle crossed through zero, the bike sometimes undercompensated and fell the other way. Increasing the derivative term improved the response.
+          </p>
+        </div>
+      </div>
+
+      <div class="callout">
+        The page avoids re-deriving the full physics model because the portfolio-relevant work was the control implementation: getting sensor feedback, motor commands, gain tuning, and drive logic to work together on physical hardware.
+      </div>
+    </section>
+
+    <section class="project-section">
+      <p class="section-eyebrow">Distance control</p>
+      <h2>Encoder counts set the stopping trigger.</h2>
+      <div class="two-col">
+        <div class="detail-card">
+          <h3>Target conversion</h3>
+          <p>
+            The 2 meter target was converted into an encoder-count threshold using the wheel circumference and the motor encoder resolution. The calculated value was then adjusted experimentally.
+          </p>
+          <div class="equation-card">
+            <code>targetCounts ≈ 1000 · 2 / (2π · 0.038) ≈ 8670</code>
+          </div>
+        </div>
+
+        <div class="detail-card">
+          <h3>Motion sequence</h3>
+          <ul>
+            <li>Balance in place for 5 seconds.</li>
+            <li>Ramp drive duty toward maximum speed.</li>
+            <li>Track encoder counts while moving forward.</li>
+            <li>Ramp down drive duty after the target count.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section">
+      <p class="section-eyebrow">Takeaways</p>
+      <h2>What this project demonstrated.</h2>
+      <div class="two-col">
+        <div class="detail-card">
+          <h3>Technical achievements</h3>
+          <ul>
+            <li>Implemented a flywheel-based balancing controller on an unstable physical system.</li>
+            <li>Integrated roll feedback, encoder feedback, steering alignment, and motor duty logic.</li>
+            <li>Tuned controller gains and drive ramp behavior through hardware testing.</li>
+            <li>Balanced stopping accuracy against stability during acceleration and braking.</li>
+          </ul>
+        </div>
+
+        <div class="detail-card">
+          <h3>Engineering lessons</h3>
+          <ul>
+            <li>Controller gains that look acceptable in simulation still need physical validation.</li>
+            <li>Acceleration profile matters as much as the balance controller on a moving platform.</li>
+            <li>Simple control decisions can be more reliable than overcomplicated ones when the task is constrained.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
